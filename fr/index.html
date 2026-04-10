@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Easy Oud – Démonstration Interactive</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-fr.js" defer></script>
+</head>
+
+<body>
+<header class="main-header">
+    <a href="../index.html">
+        <img class="logo-normal"
+            src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+            alt="Logo" />
+    </a>
+</header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">Démonstration Interactive</p>
+            <button id="reveal-btn" class="ignite-btn">Débuter l'expérience</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">Allumer</button>
+        </section>
+
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>Patrimoine Saoudien</strong>
+                    <p>Fabriqué avec fierté en Arabie saoudite. Agarwood de haute qualité provenant d'une tradition s'étendant sur près d'un siècle.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Facile à allumer</strong>
+                    <p>Facile à allumer. Nécessite pas de charbon ou de brûleurs traditionnels.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Temps de combustion</strong>
+                    <p>Un seul bâton brûle pendant environ une heure.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Puissance Concentrée</strong>
+                    <p>Un seul bâton offre la force de parfum équivalente à 1 kg d'agarwood naturel.</p>
+                </div>
+                <div class="feature-item">
+                    <strong> Purification de l'air</strong>
+                    <p>Purifie naturellement l’air des germes et des odeurs désagréables.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Effet Apaisant</strong>
+                    <p>Apaise les nerfs, réduit le stress et améliore l’humeur grâce à l’aromathérapie.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Longévité</strong>
+                    <p>Le parfum perdure bien plus longtemps que les désinfectants d'air traditionnels.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Valeur Artistique</strong>
+                    <p>Un parfum unique et distinct, conçu avec soin historique.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="agarwood powder"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="safran doré">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="rose de Damas">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="plante de costus"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="bergamote"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="cuir"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="bois"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="poivre rose">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="cardamome"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="agrumes"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="sel de l'océan"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="plantes ligneuses et moussues">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="bois d'agar">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="brise de l'océan"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="lilium"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="ambre"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="musc de cerf"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="tonka"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="roses"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="rose de Taif"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="épices"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="citron"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="lavande"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmin"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="roses"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="bois de cèdre"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="safran"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="agarwood de Kalimantan"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="agarwood de Maroki"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="agarwood de Cambodge"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="épices"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="fleurs"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="bois de santal"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="patchouli"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="bois de cèdre"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="agarwood de Kalimantan"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="agarwood de Cambodge"></div>
+                    </div>
+
+                    <div class="scent-showcase-box">
+                        <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="Collection de bâtons">
+                        <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                            alt="Boîte de parfum Oud Azraq de luxe par Surrati, emballage bleu profond avec texte en arabe et en anglais, présentant un logo et une typographie blanche élégants, évoquant l'essence d'un parfum d'oud premium">
+                        <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                            alt="Boîte de parfum Cuir Cardamome, emballage marron avec des accents verts et dorés, texte en arabe et en anglais, logo blanc élégant, évoquant un parfum de cuir épicé et raffiné">
+                        <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                            alt="Boîte de parfum Oud Océan, emballage bleu et blanc frais et naturel, design de packaging d'odeur d'ondes marines">
+                        <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                            alt="Coffret de parfum Royal Scent, emballage majestueux et royal à rayures blanches et dorées, renfermant une essence de musc profonde et persistante.">
+                        <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                            alt="Coffret de parfum Ward Taifi, emballage légendaire pour le parfum rose de Taïf, au design élégant.">
+                        <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                            alt="Coffret de parfum Lavande Jardin, un emballage floral apaisant, violet et blanc évoquant l'atmosphère d'un jardin baigné de soleil">
+                        <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                            alt="Coffret de parfum Safran Impérial, emballage luxueux et épicé avec des accents dorés, évoquant la richesse du safran et du bois d'oud du Kalimantan">
+                        <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                            alt="Coffret de parfum Huile d'Oud Maroki, emballage sombre et mystérieux avec des accents dorés, évoquant la rareté et l'exclusivité du bois d'oud de Maroki">
+                        <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                            alt="Coffret de parfum Tabac Cubain, emballage riche et chaleureux avec des accents de tabac et de bois, évoquant l'essence d'un parfum de tabac cubain épicé et boisé">
+                        <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                            alt="Coffret de parfum Oud de Kalimantan, emballage élégant et naturel avec des accents de bois et de vert, évoquant la rareté et la qualité du bois d'oud de Kalimantan">
+                    </div>
+
+                    <div class="scents-panels">
+                        <div class="scent-panel" id="panel-azraq">
+                            <h2>Oud Azraq</h2>
+                            <p>Bois d'Oud finement sélectionné, d'une richesse et d'un luxe impressionnants 
+                                — des touches de safran doré, de rose de Damas et de Costus pour un parfum d'encens équilibré et complet.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-leather">
+                            <h2>Cuir cardamome</h2>
+                            <p>Avec un mélange unique de bois, de bergamote, de poivre rose et de cardamome.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-ocean">
+                            <h2>Bois d'Océan</h2>
+                            <p>Frais comme le grand air — avec des notes légères d'agrumes et de sel marin, 
+                                des accords boisés et moussus, et un bois d'Oud harmonieux imprégné d'un parfum de brise marine.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-royal">
+                            <h2>Musc Royal</h2>
+                            <p>Idéal en toute occasion et rafraîchissant en été. Le musc et l’ambre offrent une fraîcheur immédiate, 
+                                suivis d’un cœur de lys et de musc sur un fond de tonka et de rose pour une expérience sublime.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-taifi">
+                            <h2>Rose de Taïf</h2>
+                            <p>Inspiré par la tradition arabe, cet encens raffiné capture l'essence de huit mille roses de Taïf 
+                                cueillies à la main. En mariant le jasmin aux fleurs de première récolte, il révèle un sillage 
+                                boisé-fleuri époustouflant qui immerge totalement les sens.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-lavender">
+                            <h2>Jardin de Lavande</h2>
+                            <p>Il présente un mélange d'épices chaudes, de bergamote, de citron, de lavande, de jasmin, 
+                                de rose et de bois de cèdre.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-saffron">
+                            <h2>Safran Impérial</h2>
+                            <p>Essence d'huile de safran au bois d'Oud du Kalimantan.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-maroki">
+                            <h2>Huile d'Oud Maroki</h2>
+                            <p>Une variété rare et disparue de Maroki, issue des montagnes embrumées du Cambodge. 
+                                Ce mélange luxueux conjugue la passion du bois d'Oud brut à des notes profondes d'encens, 
+                                créant une fragrance bouleversante qui touche droit au cœur.</p>
+                        </div>
+                        <div class="scent-panel" id="panel-cuban">
+                            <h2>Tabac Cubain</h2>
+                            <p>Le Tabac Cubain se compose d'un mélange d'épices, de fleurs de jasmin, de patchouli et de bois de santal.
+                            </p>
+                        </div>
+                        <div class="scent-panel" id="panel-kalimantan">
+                            <h2>Oud de Kalimantan</h2>
+                            <p>Vieilli durant 80 ans, cet Oud d'exception figure parmi les plus rares des montagnes de Kalimantan. 
+                                Un héritage précieux transmis de génération en génération, offrant une distinction sans égale aux 
+                                amateurs d'excellence.</p>
+                        </div>
+                    </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Surrati Perfumes. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+                <li><a href="https://github.com/Fir3Boy">Contactez-nous</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">Commandez maintenant</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

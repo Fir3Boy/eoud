@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ur">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ایزی عود – تعاملی پیشکش</title>
+    <link rel="stylesheet" href="../assets/css/style-ur.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-ur.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name"> عود <span> &nbsp; زي </span> إي </h1>
+            <p class="subtitle">تعاملی پیشکش</p>
+            <button id="reveal-btn" class="ignite-btn">مظاہرے کا آغاز کریں</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">روشن کریں</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>سعودی ورثہ</strong>
+                    <p>فخر کے ساتھ سعودی عرب میں تیار کردہ۔ تقریباً ایک صدی پر محیط روایت سے حاصل شدہ اعلیٰ معیار کا
+                        عود۔</p>
+                </div>
+                <div class="feature-item">
+                    <strong>سمارٹ بخور</strong>
+                    <p>روشن کرنا نہایت آسان۔ کسی کوئلے یا روایتی بخور دان کی ضرورت نہیں.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>جلنے کا دورانیہ</strong>
+                    <p>ایک اسٹک تقریباً ایک گھنٹے تک مہکتی رہتی ہے۔</p>
+                </div>
+                <div class="feature-item">
+                    <strong>طاقتور ارتکاز</strong>
+                    <p>صرف ایک شاخ سے حاصل ہونے والی خوشبو کی شدت ایک کلوگرام قدرتی عود کے برابر ہے۔</p>
+                </div>
+                <div class="feature-item">
+                    <strong>ہوا کی پاکیزگی</strong>
+                    <p>ہوا کو جراثیم اور ناگوار بو سے قدرتی طور پر پاک کرتا ہے۔</p>
+                </div>
+                <div class="feature-item">
+                    <strong>پرسکون اثر</strong>
+                    <p>اعصاب کو سکون بخشتا ہے، ذہنی تناؤ کو کم کرتا ہے، اور اروما تھراپی کے ذریعے موڈ کو خوشگوار بناتا
+                        ہے۔</p>
+                </div>
+                <div class="feature-item">
+                    <strong>دیرپا اثر</strong>
+                    <p>اس کی خوشبو عام ایئر فریشنرز کے مقابلے میں کہیں زیادہ دیر تک برقرار رہتی ہے۔</p>
+                </div>
+                <div class="feature-item">
+                    <strong>فنکارانہ اہمیت</strong>
+                    <p>ایک منفرد اور ممتاز خوشبو جسے تاریخی مہارت اور توجہ سے تیار کیا گیا ہے۔</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="agarwood powder"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="سنہری زعفران">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="دمشق گلاب">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="قسطِ شیریں"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="برگاموٹ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="چرمی"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="لکڑی"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="گلابی کالی مرچ">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="الائچی"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="ھٹی"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="سمندری نمک"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="لکڑی اور کائی والے پودے">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="اگرووڈ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="سمندری ہوا"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="للی"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="امبر"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="ہرن کی کستوری"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="ٹونکا"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="گلاب"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="ٹائیفی گلاب"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="جوینس"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="مصالحے"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="لیموں"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="لیوندر"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="جوینس"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="گلاب"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="سیڈر وڈ"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="امبر"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="اگرووڈ پاوڈر"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="ماروکی اگرووڈ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="کمبودی اگرووڈ"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="مصالحے"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="گلیاں"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="سندل وڈ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="پیچو لی"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="جوینس"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="سیڈر وڈ"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="کالیمانٹن اگرووڈ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="کمبودی اگرووڈ"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="لاٹھیوں کا مجموعہ">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="سُرّاتی کی جانب سے عود ازرق لگژری پرفیوم باکس؛ گہرے نیلے رنگ کی پیکجنگ جس پر عربی اور انگریزی تحریر موجود ہے، اور ایک نفیس سفید لوگو اور حروف عود کی اعلیٰ ترین خوشبو کی عکاسی کرتے ہیں">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="لیدر ہائل پرفیوم باکس، سبز اور سنہری رنگوں کا نفیس امتزاج، جو اپنے گرم رنگوں اور بہترین برانڈنگ کے ساتھ خوشبو کی پیکجنگ کا ایک شاہکار ہے">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="اوشین وڈ (Ocean Wood) پرفیوم باکس، تازہ اور قدرتی نیلی اور سفید سمندری لہروں والی خوشبو کا پیکجنگ ڈیزائن">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="روائل مسک پرفیوم باکس، شاہانہ اور پرتعیش گلابی اور سنہری رنگوں کا امتزاج، جو اپنے نفیس ڈیزائن اور بہترین برانڈنگ کے ساتھ خوشبو کی پیکجنگ کا ایک شاہکار ہے">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="سُرّاتی کی جانب سے عود ٹائیفی لگژری پرفیوم باکس؛ گہرے گلابی رنگ کی پیکجنگ جس پر عربی اور انگریزی تحریر موجود ہے، اور ایک نفیس سفید لوگو اور حروف ٹائیفی کی اعلیٰ ترین خوشبو کی عکاسی کرتے ہیں">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="لیونڈر گارڈن پرفیوم باکس، نرم اور پرسکون بنفشی رنگ کی پیکجنگ، جو اپنے آرام دہ رنگوں اور بہترین برانڈنگ کے ساتھ خوشبو کی پیکجنگ کا ایک شاہکار ہے">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="سُرّاتی کی جانب سے عود زعفران لگژری پرفیوم باکس؛ سنہری رنگ کی پیکجنگ جس پر عربی اور انگریزی تحریر موجود ہے، اور ایک نفیس سفید لوگو اور حروف زعفران کی اعلیٰ ترین خوشبو کی عکاسی کرتے ہیں">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="ماروکی عود پرفیوم باکس، سادہ اور قدرتی لکڑی کے رنگ کی پیکجنگ، جو اپنے قدرتی رنگوں اور بہترین برانڈنگ کے ساتھ خوشبو کی پیکجنگ کا ایک شاہکار ہے">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="کیوبن ٹوبیکو پرفیوم باکس، گرم اور پرکشش بھورے رنگ کی پیکجنگ، جو اپنے گرم رنگوں اور بہترین برانڈنگ کے ساتھ خوشبو کی پیکجنگ کا ایک شاہکار ہے">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="سُرّاتی کی جانب سے عود کالیمانٹن لگژری پرفیوم باکس؛ گہرے بھورے رنگ کی پیکجنگ جس پر عربی اور انگریزی تحریر موجود ہے، اور ایک نفیس سفید لوگو اور حروف کالیمانٹن کی اعلیٰ ترین خوشبو کی عکاسی کرتے ہیں">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>بلیو عود</h2>
+<p>عمدہ متوازن عود کی لکڑی، جو اپنی مثال آپ اور پرتعیش ہے — سنہری زعفران، دمشقی گلاب، اور کوسٹس (قسط) کی آمیزش سے تیار کردہ ایک بہترین اور مکمل بخور کی خوشبو۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>لیدر کارڈمم (چرمی الائچی)</h2>
+<p>لکڑی، برگاموٹ، گلابی مرچ، اور الائچی کے ایک منفرد امتزاج کے ساتھ۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>اوشین وُڈ (Ocean Wood)</h2>
+<p>تازہ ہوا کی طرح خنک — لیموں کی ہلکی مہک، سمندری نمک، لکڑی اور کائی دار پودوں کے لمس کے ساتھ، اور ایک خاص عود کی آمیزش جو سمندری نسیم کی خوشبو سے معطر ہے۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>رائل مسک</h2>
+<p>تمام مواقع کے لیے موزوں اور گرمی کی تپش میں تازگی کا احساس۔
+مشک اور عنبر کے نوٹ فوری فرحت بخشتے ہیں، 
+جبکہ ہرن کی مشک اور پرتعیش للی کے درمیانی نوٹ ٹونکا اور گلاب کے 
+بنیادی نوٹوں کے ساتھ مل کر ایک حقیقی خوبصورت تجربہ پیش کرتے ہیں۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>گلِ طائف</h2>
+<p>عربی روایات سے متاثر، یہ نفیس بخور ہاتھوں سے چنے گئے آٹھ ہزار طائف گلابوں کے جوہر سے تیار کیا گیا ہے۔ چنبیلی (یاسمین) اور پہلی بہار کے شگفتہ پھولوں کا یہ امتزاج، ایک سحر انگیز لکڑی اور پھولوں کی خوشبو پیدا کرتا ہے جو تمام حواس کو اپنے سحر میں جکڑ لیتی ہے۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>لیونڈر گارڈن</h2>
+<p>یہ گرم مصالحوں، برغموت، لیموں، لیونڈر، چنبیلی، گلاب اور دیودار کی لکڑی کا ایک بہترین امتزاج ہے۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                       <h2>شاہی زعفران</h2>
+<p>کالیمانٹان عود کی لکڑی کے ساتھ زعفران کے تیل کا جوہر۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>دہن عود ماروکی</h2>
+<p>کمبوڈیا کے دھند سے ڈھکے پہاڑوں سے حاصل کردہ ایک نایاب اور ناپید ماروکی قسم۔ 
+یہ پرتعیش آمیزہ خام عود کی لکڑی کے جوش اور گہرے بخور (دھونی) کے نوٹوں کو یکجا کرتا ہے، 
+جو ایک ایسا مسحور کن احساس پیدا کرتا ہے جو براہِ راست دل میں اتر جاتا ہے۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>کیوبا کا تمباکو</h2>
+<p>کیوبا کا تمباکو مصالحوں، چنبیلی کے پھولوں، پیچولی اور صندل کی لکڑی کے ایک بہترین امتزاج پر مشتمل ہے۔</p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>عود کالی منتان</h2>
+<p>اسی سال پرانی، یہ عود کی لکڑی کی بہترین اور قدیم ترین اقسام میں سے ایک ہے، 
+جو کالی منتان کے پہاڑوں میں عود کے نایاب ترین درختوں سے حاصل کی گئی ہے۔ 
+یہ خاص طور پر ان لوگوں کے لیے پیش کی جاتی ہے جو انفرادیت اور امتیاز کے متلاشی ہیں؛ 
+ایک ایسا بے مثال ورثہ جو دادا سے پوتوں تک منتقل ہوا ہے۔</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 سورتی پرفیوم۔ جملہ حقوق محفوظ ہیں۔</p>
+            <ul class="footer-links">
+                <li><a href="#">رازداری کی پالیسی</a></li>
+                <li><a href="#">شرائطِ خدمت</a></li>
+                <li><a href="https://github.com/Fir3Boy">ہم سے رابطہ کریں۔</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">ابھی آرڈر کریں۔</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

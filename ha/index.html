@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ha">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Easy Oud – Nunin Haɗin Gwiwa</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-ha.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">Nunin Haɗin Gwiwa</p>
+            <button id="reveal-btn" class="ignite-btn">Fara Annunin Gwiwa</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">Kunna</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>Gadon Saudiya</strong>
+                    <p>Garin Saudi ne ya ƙera shi da alfahari. Ingantaccen icen darat (oud) mai kyan gaske wanda aka
+                        samo shi daga gado na kusan ƙarni guda.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Turaren Wuta na Zamani</strong>
+                    <p>Mai sauƙin kunna wa. Ba ya buƙatar garwashin wuta ko matosai na gargajiya.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Lokacin Ci</strong>
+                    <p>Guda daya yana ci na tsawon kusan awa daya.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Ƙarfin da aka Tattara</strong>
+                    <p>Kwaya guda ɗaya tana samar da ƙamshin da ya yi daidai da kishiyar kilogiram ɗaya na itacen
+                        agarwood na asali.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Tsarkake Iska</strong>
+                    <p>Yana tace iska daga kwayoyin cuta da munanan warai ta hanyar dabi'a.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Tasirin Kwantar da Hankali</strong>
+                    <p>Yana kwantar da jijiyoyin jiki, yana rage damuwa, kuma yana inganta yanayi ta hanyar maganin
+                        ƙamshi (aromatherapy).</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Dorewa</strong>
+                    <p>Kamshinsa yana daɗewa sosai fiye da sauran turaren fesa na gida na asali.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Darajar Fasaha</strong>
+                    <p>Wani daddaɗan ƙamshi na musamman, wanda aka ƙera shi da matuƙar kulawa ta tarihi.</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="agarwood foda">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="zinariya saffron">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="damascus fure">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="shuka costus"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="bergamot"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="fata"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="itace"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png"
+                                alt="barkono mai ruwan hoda"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="cardamom"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="citrus"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="gishirin teku"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png"
+                                alt="katako da tsire-tsire masu laushi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="agarwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="iskan teku"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="lily"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="amber"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="barewa miski"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="tonka"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="wardi"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="taifi tashi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="kayan yaji"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="lemun tsami"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="lavender"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="wardi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="itacen al'ul"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="saffron"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="kalimantan agarwood"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="maroki agarwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="cambodi agarwood"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="kayan yaji"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="furanni"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="sandalwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="patchouli"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="itacen al'ul"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="kalimantan agarwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="cambodi agarwood"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="Tarin sanduna">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Akwatin kamshi na Oud Azraq na Surrati, marufi mai zurfi mai shuɗi tare da rubutun Larabci da Ingilishi, yana nuna kyakkyawar tambari da haruffa, yana isar da ainihin ƙamshin oud.">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="Akwatin turaren fata Hail, fakitin kamshi na gwal da na zinare tare da sautuna masu dumi da ingantaccen alamar alama">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="Akwatin turare na itacen Ocean, sabo da na halitta shuɗi da fari tãguwar ruwa mai ƙamshi mai ƙamshi mai ƙira">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="Akwatin turare mai kamshi na Royal, marufi da farar fata da zinare na zinare marufi mai kamshi mai zurfi mai tsayin miski.">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="Akwatin turare Ward Taifi, almara Taif rose pink packaging mai ƙamshi mai kyau">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="Akwatin turare na Lavender Jardin, mai kwantar da hankali na fure-fure da fakitin farar kamshi na lambu yana haifar da yanayin lambun da ke cike da rana.">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="Akwatin turare na Imperial Saffron, marufi mai kyau da zinari da jajayen saffron kayan kamshi">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="Akwatin turare Dehan Oud Maroki, ingantacciyar kamshin Combodi oud mai zurfi, hadadden marufi mai launin ja.">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="Akwatin turaren Taba na Cuba, mai ƙarfi da hayaƙi mai ƙarfi tare da marufi mai ƙamshi mai launin ruwan sigari">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="Akwatin turare na Oud Kalimantan, fakitin ƙamshi na agarwood na Indonesiya">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>Turaren Itacen Azraq (Blue Oud)</h2>
+                        <p>Ingantaccen hadin itacen Oud mai matukar daraja da alfarma
+                            — tare da taba zinarin za'afaran, fure mai kamshi na Damask, da kuma Costus
+                            domin samar da daddadan kamshin turaren wuta cikakke.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>Kamshin Fata da El - (Leather Cardamom)</h2>
+                        <p>Wani hadin na musamman da aka yi da itace, bergamot, jar barkono, da kuma kwayar el.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>Iforin Teku (Ocean Wood)</h2>
+                            <p>Yana da sanyi kamar iskar sarari — tare da dandanar lemun tsami, gishirin teku,
+                                itatuwa da ganyayyaki, da kuma hadadden itacen Oud mai kamshin iskar teku.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>Turaren Miski na Sarauta</h2>
+                        <p>Ya dace da kowane yanayi kuma yana sanyaya rai a lokacin zafi.
+                            Kamshin miski da ambar suna ba da dadi nan take,
+                            yayin da tsakiyar kamshin miski na barewa da furen lili yake komawa zuwa
+                            kamshin tonka da furen wardi don samar da kwarewa mai ban sha'awa da gaske.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>Furen Taifi (Rose Taifi)</h2>
+                        <p>Wannan turaren wuta ne mai daraja wanda aka samo asali daga al'adun Larabawa,
+                            kuma an hada shi da kamshin furen Taif guda dubu takwas (8,000) wadanda aka tsinto da hannu.
+                            Ta hanyar hada furen yasmin da furen farko na kakar bana, yana samar da wani daddadan
+                            kamshi na fure da itace wanda yake sanyaya zuciya da kwantar da hankali.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>Lambun Lavender</h2>
+                            <p>Wannan turaren yana dauke da hadin kayan yaji masu dumi, bergamot, lemon tsami, furen
+                                lavender, furen jasmine, furen mawar, da kuma itacen cedarwood.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>Saffron na Sarauta</h2>
+                        <p>Ingantaccen man saffron tare da itacen Oud na Kalimantan.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>Turaren Oud na Maroki</h2>
+                            <p>Wani nau'in Maroki ne mai wuyar samu da ya bace daga duwatsun Kambodiya
+                                masu lullubin hazo. Wannan daddaɗan haɗi ya haɗa ni'imar ɗanyen itacen
+                                Oud da dumi-dumin ƙanshin turaren wuta, wanda ke samar da wani sanyin
+                                ƙanshi mai ratsa zuciya.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>Tabar Kuba (Cuban Tobacco)</h2>
+                        <p>Tabar Kuba (Cuban Tobacco) ta ƙunshi haɗin kayan ƙamshi, furannin jasmine, fasuli
+                            (patchouli), da itacen sandal (sandalwood).</p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>Oud na Kalimantan</h2>
+                            <p>An ajiye shi na tsawon shekaru tamanin, wannan yana daya daga cikin mafi kyau kuma mafi
+                                dadewa na nau'ikan itacen Oud,
+                                wanda aka samo shi daga bishiyoyin Oud mafi karanci a tsaunukan Kalimantan.
+                                An tanade shi musamman ga masu neman kwarewa da daraja, gadon da ba shi da kamala,
+                                wanda kaka ya bar wa jikoki.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Turare 2026 Surrati. An kiyaye duk haƙƙoƙi.</p>
+            <ul class="footer-links">
+                <li><a href="#">takardar kebantawa</a></li>
+                <li><a href="#">Sharuɗɗan Sabis</a></li>
+                <li><a href="https://github.com/Fir3Boy">Tuntube Mu</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">Oda Yanzu</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

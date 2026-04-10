@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>आसान ऊद – संवादात्मक प्रदर्शन</title>
+    <link rel="stylesheet" href="../assets/css/style-hi.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-hi.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">संवादात्मक प्रदर्शन</p>
+            <button id="reveal-btn" class="ignite-btn">प्रदर्शन शुरू करें</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">प्रदर्शन शुरू करें</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>प्रोजेक्ट के लिए सऊदी विरासत</strong>
+                    <p>सऊदी अरब में गर्व के साथ निर्मित। लगभग एक सदी पुरानी उच्च गुणवत्ता वाली अगरबत्ती (ऊद) की विरासत।
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <strong>स्मार्ट इनसेंस</strong>
+                    <p>जलाने में आसान। इसके लिए कोयले या पारंपरिक बर्नर की आवश्यकता नहीं है।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>बर्निंग टाइम</strong>
+                    <p>एक अकेला स्टिक लगभग एक घंटे तक जलता है।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>संकुचित शक्ति</strong>
+                    <p>एक स्टिक लगभग 1 किलोग्राम ब्रज़ीली अगरबत्ती के तुलनात्मक संवेदनशीलता प्रदान करता है।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>वातावरण संचिका</strong>
+                    <p>स्वाभाविक रूप से वातावरण को जीवाणुओं और अस्वीकार्य गंधों से साफ करता है।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>शांतिजनक प्रभाव</strong>
+                    <p>अरोमथेरेपी के माध्यम से तंत्रिका को सुगम बनाता है, तनाव को कम करता है, और मूड को सुधारता है।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>लंबा अवधि</strong>
+                    <p>संकुचित शक्ति के कारण धुंधली अगरबत्ती लंबे समय तक जलती है।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>कलात्मक मूल्य</strong>
+                    <p>इतिहासिक देखभाल के साथ निर्मित एक अद्वितीय, प्रत्येक के संगत संवेदनशीलता।</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="अगरवुड पाउडर">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="स्वर्ण सफ्रन">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="दामास्कस गुलाब">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="कोस्टस प्लांट">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="बर्गमोट"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="लेदर"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="वुड"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="पिंक पीपरकॉर्न">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="कार्डमम"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="सिट्रस"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="महासागर का नमक"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="लकड़ी और मोसी पौधे"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="अगरवुड"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="महासागर का हवा">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="लिली"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="अंबर"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="डीयर मस्क"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="टोंका"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="गुलाब"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="टैफी गुलाब"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="जास्मीन"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="मसाले"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="नींबू"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="लैवेंडर"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="जास्मीन"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="गुलाब"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="सीडरवुड"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="सफ्रन"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="कलिमंटन अगरवुड">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="मारोकी अगरवुड"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="कम्बोडियाई अगरवुड"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="मसाले"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="फूल"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="सैंडलवुड"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="पैचौली"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="जास्मीन"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="सीडरवुड"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="कलिमंटन अगरवुड"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="कम्बोडियाई अगरवुड"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="लाठियों का संग्रह">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Surrati द्वारा Oud Azraq लक्ज़री परफ्यूम बॉक्स, अरबी और अंग्रेजी पाठ के साथ गहरे नीले रंग की पैकेजिंग, सुरुचिपूर्ण सफेद लोगो और अक्षरों की विशेषता, प्रीमियम Oud सुगंध सार व्यक्त करती है">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="लेदर हेल परफ्यूम बॉक्स, गर्म टोन और परिष्कृत ब्रांडिंग के साथ परिष्कृत हरे और सुनहरे खुशबू वाली पैकेजिंग">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="ओशन वुड परफ्यूम बॉक्स, समुद्री नीले और सफेद रंग की पैकेजिंग, समुद्र की ताजगी और लकड़ी की गहराई को दर्शाती है, जिसमें सुरुचिपूर्ण डिजाइन और ब्रांडिंग है">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="रॉयल मस्क परफ्यूम बॉक्स, अमीर सोने और काले रंग की पैकेजिंग, लक्ज़री और शाहीता का प्रतीक, सुरुचिपूर्ण डिजाइन और ब्रांडिंग के साथ">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="वार्ड ताइफी परफ्यूम बॉक्स, शानदार डिज़ाइन वाला प्रसिद्ध ताइफ़ गुलाब का गुलाबी सुगंधित पैकेजिंग">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="लैवेंडर जार्डिन परफ्यूम बॉक्स, शांत फ्लोरल बैंगनी और बगीचे जैसी सफेद खुशबू वाली पैकेजिंग, जो धूप से सराबोर बगीचे के वातावरण की याद दिलाती है।">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="इम्पीरियल सैफ्रन परफ्यूम बॉक्स, समृद्ध लाल और सुनहरे रंग की पैकेजिंग, प्रीमियम सैफ्रन और कलिमंटन ओड की लक्ज़री खुशबू को दर्शाती है, सुरुचिपूर्ण डिजाइन और ब्रांडिंग के साथ">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="मारोकी ओड परफ्यूम बॉक्स, गहरे भूरे और काले रंग की पैकेजिंग, दुर्लभ मारोकी ओड की लक्ज़री खुशबू को दर्शाती है, सुरुचिपूर्ण डिजाइन और ब्रांडिंग के साथ">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="क्यूबन टोबैको परफ्यूम बॉक्स, गर्म भूरे और तंबाकू रंग की पैकेजिंग, क्यूबन टोबैको की समृद्ध खुशबू को दर्शाती है, सुरुचिपूर्ण डिजाइन और ब्रांडिंग के साथ">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="कलिमंटन ओड परफ्यूम बॉक्स, गहरे भूरे और काले रंग की पैकेजिंग, दुर्लभ कलिमंटन ओड की लक्ज़री खुशबू को दर्शाती है, सुरुचिपूर्ण डिजाइन और ब्रांडिंग के साथ">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>ब्लू ऊद</h2>
+                        <p>बारीकी से मिश्रित ऊद की लकड़ी, जो अत्यंत समृद्ध और वैभवशाली है — सुनहरे केसर, दमिश्क गुलाब और
+                            कुष्ठ का स्पर्श इसे एक संतुलित और पूर्ण सुगंध प्रदान करता है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>लेदर इलायची</h2>
+                        <p>लकड़ी, बरगामोट, गुलाबी मिर्च और इलायची का एक विलक्षण मिश्रण।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>ओशन वुड</h2>
+                        <p>ताज़ी हवा की तरह शीतल — नींबू की हल्की महक, समुद्री नमक, काष्ठीय और काईदार पौधों के मिश्रण के
+                            साथ, एक विशेष ऊद जो समुद्री हवा की खुशबू से सराबोर है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>रॉयल मस्क</h2>
+                        <p>हर अवसर के लिए उपयुक्त और गर्मियों की तपिश में ताजगी देने वाला। मस्क और एम्बर के नोट्स तुरंत
+                            ताजगी का एहसास कराते हैं, जबकि कस्तूरी और शानदार लिली की खुशबू धीरे-धीरे खुलती हुई टोंका और
+                            गुलाब के आधार में मिल जाती है, जो आपको एक बेहद खूबसूरत और यादगार अनुभव प्रदान करती है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>रोज़ तायफी</h2>
+                        <p>अरबी परंपराओं से प्रेरित, इस भव्य सुगंध में आठ हजार चुनिंदा तायफी गुलाबों का अर्क समाहित है।
+                            चमेली और ताजे खिले फूलों के मिश्रण से तैयार यह खुशबू एक शानदार वुडी-फ्लोरल सुगंध पैदा करती
+                            है, जो इंद्रियों को पूरी तरह से मंत्रमुग्ध कर देती है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>लैवेंडर गार्डन</h2>
+                        <p>इसमें तीखे मसालों, बरगामोट (सिट्रस), नींबू, लैवेंडर, चमेली, गुलाब और देवदार की लकड़ी
+                            (सीडरवुड) का एक शानदार मिश्रण है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>इंपीरियल केसर</h2>
+                        <p>कालीमंतन ऊद की लकड़ी के साथ केसर के तेल का शुद्ध सार।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>देहन ऊद मरोकी</h2>
+                        <p>कंबोडिया के धुंध से ढके पहाड़ों से प्राप्त एक दुर्लभ और विलुप्त मरोकी किस्म। यह शानदार मिश्रण
+                            कच्चे ऊद की लकड़ी के जुनून को गहरे लोबान के नोट्स के साथ जोड़ता है, जिससे एक ऐसी हृदयस्पर्शी
+                            सुगंध पैदा होती है जो सीधे दिल तक पहुँचती है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>क्यूबन टोबैको</h2>
+                        <p>क्यूबन टोबैको मसालों, चमेली के फूलों, पैचौली और चंदन का एक अनूठा मिश्रण है।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>ऊद कालीमंतन</h2>
+                        <p>अस्सी वर्षों पुराना, यह ऊद की लकड़ी के सबसे बेहतरीन और प्राचीन प्रकारों में से एक है, जिसे
+                            कालीमंतन के पहाड़ों में स्थित दुर्लभतम ऊद वृक्षों से प्राप्त किया गया है। यह विशेष रूप से उन
+                            लोगों के लिए पेश किया गया है जो विशिष्टता और प्रतिष्ठा की तलाश में हैं—एक ऐसी बेजोड़ विरासत,
+                            जो दादाओं से पिताओं और पिताओं से बेटों तक पीढ़ी-दर-पीढ़ी चली आ रही है।</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 सुर्राती परफ्यूम्स। सर्वाधिकार सुरक्षित।</p>
+            <ul class="footer-links">
+                <li><a href="#">गोपनीयता नीति</a></li>
+                <li><a href="#">सेवा की शर्तें</a></li>
+                <li><a href="https://github.com/Fir3Boy">हमसे संपर्क करें</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">अभी ऑर्डर करें</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

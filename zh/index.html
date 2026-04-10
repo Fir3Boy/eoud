@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Easy Oud — 交互式演示</title>
+    <link rel="stylesheet" href="../assets/css/style-zh.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-zh.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">交互式演示</p>
+            <button id="reveal-btn" class="ignite-btn">开始演示</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">点燃顶端</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>沙特传承</strong>
+                    <p>沙特阿拉伯荣誉制造。源自近一个世纪的高品质沉香木传承。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>智能熏香</strong>
+                    <p>极易点燃。无需木炭或传统香炉工具。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>燃烧时间</strong>
+                    <p>单支香棒可持续燃烧约一小时。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>高浓缩精华</strong>
+                    <p>1 支香棒的香气浓度相当于 1 公斤天然沉香。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>空气净化</strong>
+                    <p>以天然方式净化空气，有效消除细菌和异味。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>舒缓功效</strong>
+                    <p>通过芳香疗法舒缓神经，缓解压力，并提升情绪。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>留香持久</strong>
+                    <p>余香缭绕，其持久度远胜于传统空气清新剂。</p>
+                </div>
+                <div class="feature-item">
+                    <strong>艺术价值</strong>
+                    <p>匠心打造，蕴含历史底蕴的独特芬芳。</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="沉香粉"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="金色藏红花"></div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="大马士革玫瑰"></div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="豆蔻植物"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="佛手柑"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="皮革"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="木材"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="粉红胡椒"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="豆蔻"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="柑橘"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="海洋盐"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="木质和苔藓植物"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="沉香"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="海洋微风"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="百合"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="琥珀"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="鹿香"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="香草"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="玫瑰"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="塔菲玫瑰"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="茉莉"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="香料"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="柠檬"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="薰衣草"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="茉莉"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="玫瑰"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="雪松木"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="黄金藏红花"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="沉香粉"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="马罗基沉香"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="柬埔寨沉香"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="香料"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="花朵"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="檀香木"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="广藿香"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="茉莉"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="雪松木"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="Kalimantan沉香"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="Cambodi沉香">
+                        </div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="棍棒的集合">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Surrati 的 Oud Azraq 奢华香水盒，深蓝色包装，附有阿拉伯文和英文文字，优雅的白色标志和字样，传达优质沉香香精">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="皮革豆蔻香水礼盒：精致的绿金配搭，色调温润，彰显品牌格调。">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="海洋木香香水礼盒：清新自然的蓝白海浪香氛包装设计">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="皇家麝香香水盒，奢华金色包装，精致的白色字体和标志，传达高贵优雅的品牌形象">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="大马士革玫瑰香水礼盒，传奇泰夫粉红玫瑰香氛，尽显典雅设计。">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="薰衣草花园系列香水礼盒：静谧花语紫与庭院纯白交织，包装尽显阳光普照下的意境。">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="皇室藏红花香水礼盒 —— 富丽华贵的金红交织，尽显御用香氛的尊崇与质感。">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="德汉马洛基沉香香水礼盒：正宗柬埔寨沉香调，配以深邃复杂的红调包装。">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="古巴烟草香水礼盒：热情奔放的红黑配色，融合古巴文化元素，彰显独特魅力。">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="卡利曼丹沉香香水礼盒：深邃木质调的棕黑色包装，传达稀有沉香的神秘与奢华。">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>青蓝沉香</h2>
+                        <p>精选顶级沉香木，极尽奢华且层次丰富——融合了金黄藏红花、大马士革玫瑰与广藿香，营造出平衡而完美的非凡感官体验。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>皮革豆蔻 (Pígé Dòukòu)</h2>
+                        <p>融合了木香、佛手柑、粉红胡椒与豆蔻的独特韵味。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>海洋木香</h2>
+                        <p>清新如缕——清透的柑橘、海盐、木质与苔藓香气交织，融合沉香木的深邃，散发出如海风般的旷远气息。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>皇家麝香</h2>
+                        <p>适合任何场合，在炎热夏日倍感清新。麝香与琥珀带来瞬时的清爽感，而深邃的鹿麝与名贵百合心调逐渐展开，最终融入东加豆与玫瑰的基调中，为您开启一段曼妙迷人的感官之旅。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>泰夫玫瑰 (Rose Taifi)</h2>
+                        <p>灵感源自阿拉伯百年传统，这款优雅的香氛凝聚了八千朵手工采摘的泰夫玫瑰精华。
+                            将淡雅茉莉与初绽花蕾完美融合，营造出令人沉醉的木质花香调，
+                            带来一场全方位沉浸式的感官盛宴。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>薰衣草花园</h2>
+                        <p>融合了辛辣香料、佛手柑、柠檬、薰衣草、茉莉、玫瑰以及雪松的独特韵味。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>皇室藏红花</h2>
+                        <p>藏红花精油精华，融合加里曼丹沉香木。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>德汗·马罗基 沉香</h2>
+                        <p>产自云雾缭绕的高棉山脉，这是一款稀有且近乎绝迹的马罗基（Maroki）品种。这款奢华的香氛将原生态沉香木的热烈与深邃的熏香韵味完美融合，营造出一种直抵灵魂、动人心弦的芬芳。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>古巴烟草</h2>
+                        <p>“古巴烟草”由辛香料、茉莉花、广藿香与檀香木调配而成，散发着迷人的层次感。</p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>加里曼丹沉香 (Oud Kalimantan)</h2>
+                        <p>历经八十载岁月的沉淀，这是最顶级、最古老的沉香木之一，
+                            取自加里曼丹山脉中最为罕见的沉香老树。
+                            我们专为追求卓越与独特身份的人士打造。
+                            这份无与伦比的文化遗产，代代相传，从祖辈流向子孙。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 苏拉蒂香水。版权所有。</p>
+            <ul class="footer-links">
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">服务条款</a></li>
+                <li><a href="https://github.com/Fir3Boy">联系我们</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">立即订购</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

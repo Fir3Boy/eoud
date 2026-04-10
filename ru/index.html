@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Easy Oud – Интерактивное демонстрация</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-ru.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">Интерактивное демонстрация</p>
+            <button id="reveal-btn" class="ignite-btn">Начать демонстрацию</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">Зажечь</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>Саудовская культура</strong>
+                    <p>С гордостью изготовлено в Саудовской Аравии. Высококачественный агарWOOD из legacy, охватывающего почти век.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Умный инценз</strong>
+                    <p>Легко воспламеняется. Не требует угля или традиционных поджигателей.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Время горения</strong>
+                    <p>Один стик горит примерно час.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Концентрированная сила</strong>
+                    <p>1 палочка обеспечивает силу аромата, эквивалентную 1 кг натурального агара.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Очистка воздуха</strong>
+                    <p>Естественно очищает воздух от бактерий и неприятных запахов.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Успокаивающий эффект</strong>
+                    <p>Успокаивает нервы, снимает стресс и улучшает настроение через ароматерапию.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Долговечность</strong>
+                    <p>Аромат дольше сохраняется, чем у традиционных освежителей воздуха.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Художественная ценность</strong>
+                    <p>Уникальный, отличительный аромат, созданный с исторической заботой.</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="порошок агарового дерева"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="золотой шафран"></div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="дамасская роза"></div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="растение костус"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="бергамот"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="кожа"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="дерево"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="розовый перец"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="кардамон"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="цитрус"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="морская соль"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="деревянные и мховые растения"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="агаровое дерево"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="морской бриз"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="лилия"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="ямб"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="олений муск"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="тонка"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="розы"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="таифи роза"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="жасмин"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="приправы"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="лимон"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="лаванда"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="жасмин"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="розы"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="кедровое дерево"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="золотой шафран"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="калимантанское агарWOOD"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="мароки агарWOOD"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="камбодж агарWOOD"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="приправы"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="цветы"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="сандаловое дерево"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="патчали"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="жасмин"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="кедровое дерево"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="калимантанское агарWOOD"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="камбодж агарWOOD"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="Коллекция палочек">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Роскошная парфюмерная коробка Oud Azraq от Surrati, темно-синяя упаковка с арабским и английским текстом, элегантным белым логотипом и надписью, передающей премиальную сущность аромата уда.">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="Кожаная коробочка для духов Hail, изысканная зелено-золотистая упаковка для ароматов в теплых тонах и изысканный брендинг.">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="Коробка для духов Ocean Wood от Surrati, освежающая синяя и белая упаковка с морским дизайном, передающая чистый и освежающий аромат океанского дерева.">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="Коробка для духов Royal Musk от Surrati, роскошная золотая и черная упаковка с элегантным дизайном, передающая богатый и королевский аромат мускуса.">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="Коробка для духов Rose Taifi от Surrati, изысканная розовая и золотая упаковка с цветочным дизайном, передающая элегантный и женственный аромат розы таиф.">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="Коробка для духов Lavender Garden от Surrati, успокаивающая фиолетовая и зеленая упаковка с цветочным дизайном, передающая свежий и расслабляющий аромат лаванды.">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="Коробка для духов Imperial Saffron от Surrati, роскошная золотая и черная упаковка с элегантным дизайном, передающая богатый и пряный аромат шафрана.">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="Коробка для духов Dehan Oud Maroki от Surrati, роскошная темно-коричневая и золотая упаковка с элегантным дизайном, передающая богатый и глубокий аромат мароки уда.">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="Коробка для духов Cuban Tobacco от Surrati, стильная коричневая и золотая упаковка с табачным дизайном, передающая теплый и пряный аромат кубинского табака.">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="Коробка для духов Oud Kalimantan от Surrati, премиальная индонезийская упаковка для аромата уда">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>Голубой Уд</h2>
+                        <p>Изысканная смесь удового дерева, впечатляющая своим богатством и роскошью — ноты золотого шафрана, дамасской розы и костуса для сбалансированного и совершенного аромата благовоний.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>Кожаный Кардамон</h2>
+                        <p>Уникальная смесь дерева, бергамота, розового перца и кардамона.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>Океанское Дерево</h2>
+                        <p>Свежий как свежий воздух — с легкими нотами цитрусовых, морской соли,
+                            древесных и мховых растений, и смешанного аромата уда, напоминающего аромат океанского
+                            breeze.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>Королевский Маск</h2>
+                        <p>Идеально подходит для любого случая и дарит прохладу в летний зной. Ноты мускуса и амбры обеспечивают мгновенную свежесть, в то время как «сердце» из благородного оленьего мускуса и роскошной лилии переходит в шлейф из бобов тонка и розы, создавая поистине великолепную атмосферу.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>Роза Тайф</h2>
+                        <p>Вдохновленная арабской традицией, этот элегантный благовонный инценс представляет собой суть восьми
+                            тысяч собранных вручную роз Тайфа. Смешивая жасмин с первыми цветами,
+                            он создает захватывающий древесно-цветочный аромат, который полностью погружает органы чувств.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>Лаванда Сад</h2>
+                        <p>Он включает в себя смесь горячих специй, бергамота, лимона, лаванды, жасмина, розы и
+                            кедра.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>Имперский Сафран</h2>
+                        <p>Сафрановое масло с деревом Уд из Калимантана.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>Масло Уд Мароки</h2>
+                        <p>Редкий, вымерший сорт марокийского уда из покрытых туманом камбоджийских гор. Этот роскошный_blend сочетает страсть сырого дерева уда с глубокими благовонными нотами, создавая волнующий аромат, который достигает прямиком до сердца.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>Кубинская Табак</h2>
+                        <p>Кубинский Табак состоит из смеси специй, цветов жасмина, пачули и сандалового дерева.
+                        </p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>Уд Калимантан</h2>
+                        <p>Этот уд с восьмидесятилетней выдержкой — один из самых благородных и старинных сортов, добываемый из редчайших деревьев в горах Калимантана. Он создан специально для тех, кто ищет эксклюзивность и величие — это непревзойденное наследие, передаваемое от дедов к сыновьям</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Парфюмерия Суррати. Все права защищены.</p>
+            <ul class="footer-links">
+                <li><a href="#">политика конфиденциальности</a></li>
+                <li><a href="#">условия обслуживания</a></li>
+                <li><a href="https://github.com/Fir3Boy">Связаться с нами</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">Заказать сейчас</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

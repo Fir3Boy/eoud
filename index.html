@@ -1,0 +1,256 @@
+<!-- بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+ This project was made as a personal learning experience and as a final project for CS3305 Web Programming 2, to practice HTML, CSS, 
+ and JavaScript by building a simple splash page for the Easy Oud product. 
+ The goal was to create an elegant and user-friendly interface that allows 
+ visitors to select their preferred language before entering the main site.
+Ahmed Ahmed | 2026-04-10 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Easy Oud – Select Your Language</title>
+    
+    <!-- Link to your existing global style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Splash-Page Specific Styles -->
+    <style>
+        /* Reusing your hero class but adjusting height for the grid */
+        .splash-hero {
+            min-height: calc(100vh - 100px); /* 100px for header */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Language Grid Container */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+
+        /* Regional Category Label */
+        .region-label {
+            grid-column: 1 / -1; /* Spans full width of grid */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0 10px;
+            color: #aaa;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+            
+            /* Initial state for animation */
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease-out;
+        }
+
+        .region-label.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .region-label::before, .region-label::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+
+        /* Language Card styled with your EXACT .feature-item transformations */
+        .lang-card {
+            border-left: 3px solid #d4af37;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+            
+            /* Initial state for your transition */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3 s ease-out;
+        }
+
+        /* Visible state triggered by JS */
+        .lang-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover Effect from your code */
+        @media (hover: hover) {
+            .lang-card:hover {
+                background: rgba(212, 175, 55, 0.1);
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Active/Click state from your code */
+        .lang-card:active {
+            background: rgba(212, 175, 55, 0.2);
+            transform: scale(0.97);
+            transition: transform 0.1s;
+        }
+
+        .lang-native {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .lang-english {
+            color: #ccc;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Essential Font Support for specific scripts to prevent breaking */
+        [lang="ar"] .lang-native, [lang="fa"] .lang-native, [lang="ur"] .lang-native { font-family: 'Segoe UI Arabic', sans-serif; }
+        [lang="hi"] .lang-native { font-family: 'Noto Sans Devanagari', 'Hind', sans-serif; line-height: 1.6; }
+        [lang="bn"] .lang-native { font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif; line-height: 1.6; }
+        [lang="zh"] .lang-native { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    </style>
+</head>
+<body>
+
+    <!-- YOUR EXACT HEADER -->
+    <header class="main-header">
+        <a href="index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+
+    <main>
+        <section class="splash-hero">
+            <!-- YOUR EXACT ANIMATED TITLE -->
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">Select your language</p>
+
+            <!-- THE LANGUAGE GRID -->
+            <div class="lang-grid">
+                
+                <!-- Middle East -->
+                <div class="region-label">Middle East</div>
+                <a href="ar/index.html" class="lang-card" lang="ar">
+                    <span class="lang-native" dir="rtl">العربية</span>
+                    <span class="lang-english">Arabic</span>
+                </a>
+                <a href="fa/index.html" class="lang-card" lang="fa">
+                    <span class="lang-native" dir="rtl">فارسی</span>
+                    <span class="lang-english">Farsi</span>
+                </a>
+                <a href="tr/index.html" class="lang-card" lang="tr">
+                    <span class="lang-native">Türkçe</span>
+                    <span class="lang-english">Turkish</span>
+                </a>
+
+                <!-- South Asia -->
+                <div class="region-label">South Asia</div>
+                <a href="ur/index.html" class="lang-card" lang="ur">
+                    <span class="lang-native" dir="rtl">اردو</span>
+                    <span class="lang-english">Urdu</span>
+                </a>
+                <a href="hi/index.html" class="lang-card" lang="hi">
+                    <span class="lang-native">हिन्दी</span>
+                    <span class="lang-english">Hindi</span>
+                </a>
+                <a href="bn/index.html" class="lang-card" lang="bn">
+                    <span class="lang-native">বাংলা</span>
+                    <span class="lang-english">Bengali</span>
+                </a>
+
+                <!-- Global / Western -->
+                <div class="region-label">Global / Western</div>
+                <a href="en/index.html" class="lang-card" lang="en">
+                    <span class="lang-native">English</span>
+                    <span class="lang-english">English</span>
+                </a>
+                <a href="fr/index.html" class="lang-card" lang="fr">
+                    <span class="lang-native">Français</span>
+                    <span class="lang-english">French</span>
+                </a>
+                <a href="ru/index.html" class="lang-card" lang="ru">
+                    <span class="lang-native">Русский</span>
+                    <span class="lang-english">Russian</span>
+                </a>
+
+                <!-- Africa -->
+                <div class="region-label">Africa</div>
+                <a href="sw/index.html" class="lang-card" lang="sw">
+                    <span class="lang-native">Kiswahili</span>
+                    <span class="lang-english">Swahili</span>
+                </a>
+                <a href="ha/index.html" class="lang-card" lang="ha">
+                    <span class="lang-native">Hausa</span>
+                    <span class="lang-english">Hausa</span>
+                </a>
+
+                <!-- East / Central Asia -->
+                <div class="region-label">East / Central Asia</div>
+                <a href="zh/index.html" class="lang-card" lang="zh">
+                    <span class="lang-native">中文</span>
+                    <span class="lang-english">Chinese</span>
+                </a>
+                <a href="id/index.html" class="lang-card" lang="id">
+                    <span class="lang-native">Bahasa Indonesia</span>
+                    <span class="lang-english">Indonesian</span>
+                </a>
+                <a href="uz/index.html" class="lang-card" lang="uz">
+                    <span class="lang-native">Oʻzbek</span>
+                    <span class="lang-english">Uzbek</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- YOUR EXACT FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Surrati Perfumes. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="https://github.com/Fir3Boy">Contact Us</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">Order Now</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Trigger the visibility classes after the main title animation finishes
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const items = document.querySelectorAll('.lang-card, .region-label');
+                items.forEach((item, index) => {
+                    // Staggered entry for a high-end feel
+                    setTimeout(() => {
+                        item.classList.add('is-visible');
+                    }, index * 50); 
+                });
+            }, 1500); // 2.5s matches your CSS shrinkName animation timing
+        });
+    </script>
+
+</body>
+</html>

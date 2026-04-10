@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Oudi Rahisi – Onyesho la Maingiliano</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-sw.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">Onyesho la Maingiliano</p>
+            <button id="reveal-btn" class="ignite-btn">Anza Ujumbe</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">Washa</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>Urithi wa Saudia</strong>
+                    <p>Imetengenezwa kwa fahari nchini Saudi Arabia. Udi ya hali ya juu kutoka kwenye urithi wa karibu
+                        karne moja.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Udi Janja</strong>
+                    <p>Ni rahisi kuwasha. Haihitaji mkaa wala vyombo vya kiasili vya kufukizia.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Muda wa kuungua</strong>
+                    <p>Kijiti kimoja huwaka kwa takriban saa moja.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Nguvu Iliyokolezwa</strong>
+                    <p>Kijiti 1 tu hutoa harufu sawa na kilo 1 ya udi ghafi ya asili.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Kusafisha Hewa</strong>
+                    <p>Huondoa vijidudu na harufu mbaya hewani kwa njia ya asili.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Athari ya Kutuliza</strong>
+                    <p>Hutuliza mishipa, hupunguza msongo wa mawazo, na kuboresha hali ya hisia kupitia tiba ya
+                        manukato.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Kudumu</strong>
+                    <p>Harufu hii hukaa kwa muda mrefu zaidi kuliko vitakasa hewa vya kawaida.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Thamani ya Kisanaa</strong>
+                    <p>Harufu ya kipekee na inayotambulika, iliyotengenezwa kwa umakini wa kihistoria.</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="poda ya Udi">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png"
+                                alt="zafarani ya dhahabu"></div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp"
+                                alt="Waridi la Damascus"></div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="mmea wa costus">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="bergamot"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="ngozi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="mbao"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png"
+                                alt="nafaka ya pilipili"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="kadiamu"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="machungwa"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="chumvi ya bahari">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="mimea ya mbao na mossy">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="Udi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="upepo wa bahari">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="yungiyungi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="kahawia"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="kulungu miski"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="mti wa tonka"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="waridi"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="Waridi la Taif"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="asumini"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="viungo"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="limau"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="mrujuani"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="asumini"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="waridi"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="Mafuta ya mwerezi">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="zafarani"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="Udi wa Kalimantan"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="Udi wa maroki"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="Udi wa cambodi"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="viungo"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="maua"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="msandali"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="patchouli"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="asumini"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="Mafuta ya mwerezi">
+                        </div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="Udi wa Kalimantan"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="Udi wa Cambodi">
+                        </div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="Mkusanyiko wa vijiti">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Sanduku la pafyumu la kifahari la Oud Azraq lililoandikwa na Surrati, kifurushi cha rangi ya samawati yenye maandishi ya Kiarabu na Kiingereza, kilicho na nembo na herufi maridadi nyeupe, inayowasilisha manukato ya hali ya juu.">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="Sanduku la manukato la Ngozi ya Mvua ya mawe, kifungashio cha manukato ya kijani kibichi na cha dhahabu chenye toni za joto na chapa iliyosafishwa.">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="Sanduku la manukato la Ocean Wood, muundo wa ufungaji wa manukato safi na wa asili wa bluu na nyeupe">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="Sanduku la manukato la Royal Scent, vifuniko vya kifahari na vyeupe na vya dhahabu vilivyofungashiwa manukato yenye kiini kirefu na cha kudumu cha miski.">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="Sanduku la manukato la Wadi ya Taifi, kifurushi cha manukato cha waridi cha Taif kilicho na muundo wa kifahari.">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="Sanduku la manukato la Lavender Jardin, zambarau inayotuliza maua na vifungashio vya manukato meupe ya bustani inayoamsha mazingira ya bustani yenye jua.">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="Sanduku la manukato la Saffron Imperial, rich and regal golden and red saffrony saffron fragrance packaging">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="Sanduku la manukato la Oud Maroki, authentic Combodi oud fragrance with deep, complex red tone packaging">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="Sanduku la manukato la Cuban Tobacco, kifurushi cha manukato cha sigara cha Cuba chenye rangi ya kahawia na dhahabu, muundo wa kifahari unaowakilisha harufu ya sigara za Cuba.">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="Sanduku la manukato la Oud Kalimantan, kifurushi cha manukato cha rangi ya kahawia na kijivu chenye muundo wa kifahari unaowakilisha harufu ya udi wa Kalimantan.">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>Udi ya Bluu</h2>
+                        <p>Mchanganyiko wa hali ya juu wa udi, wenye utajiri na anasa ya kuvutia — miguso ya zafarani ya
+                            dhahabu, waridi la Damasiki, na 'Costus' kwa ajili ya manukato ya udi yaliyosawazishwa na
+                            kamilifu.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>Ngozi na Iliki</h2>
+                        <p>Mchanganyiko wa kipekee wa mti, mbalungi, pilipili rangi ya pinki, na iliki.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>Miti ya Baharini</h2>
+                        <p>Tulivu kama hewa safi — ikiwa na harufu nyepesi ya machungwa, chumvi ya bahari, mimea ya
+                            msituni na kamba, pamoja na mchanganyiko wa udi uliotiwa nakshi ya harufu ya upepo mwanana
+                            wa baharini.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>Miski ya Kifalme</h2>
+                        <p>Inafaa kwa kila hafla na inaleta utulivu wakati wa joto la kiangazi. Miguso ya miski na
+                            kaharabu hutoa uchangamfu wa papo hapo, huku harufu ya ndani ya miski ya kulungu na
+                            nyinyiridi ya kifahari ikichanua kuelekea msingi wa tonka na waridi kwa ajili ya hali ya
+                            kupendeza na ya kipekee.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>Waridi la Taif</h2>
+                        <p>Imehamasishwa na mapokezi ya Kiarabu, ubani huu wa kifahari una kiini cha waridi elfu nane za
+                            Taif zilizochumwa kwa mkono. Kwa kuchanganya mawaridi ya kwanza na maua ya yasmini, unaunda
+                            harufu nzuri ya kipekee ya maua na miti inayozama na kutuliza hisia kikamilifu.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>Bustani ya Lavender</h2>
+                        <p>Inajumuisha mchanganyiko wa viungo vikali, bergamoti, limao, lavenda, yasmini, waridi, na mti
+                            wa mwerezi.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>Zafarani ya Kifalme</h2>
+                        <p>Mkolezo wa mafuta ya zafarani ukiwa na udi ya asili kutoka Kalimantan.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>Dehan Udi Maroki</h2>
+                        <p>Aina adimu na ya kipekee ya Maroke kutoka milima ya Cambodia iliyofunikwa na ukungu.
+                            Mchanganyiko huu wa kifahari unaunganisha msisimko wa udi ghafi na miguso ya uvumba mzito,
+                            na kutengeneza manukato yenye kuvutia yanayogusa moyo moja kwa moja.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>Tumbaku ya Kuba</h2>
+                        <p>Tumbaku ya Kuba (Cuban Tobacco) ina mchanganyiko wa viungo, maua ya yasmini, pachoali, na mti
+                            wa sandali.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>Oudi ya Kalimantan</h2>
+                        <p>Imekomaa kwa miaka themanini, hii ni mojawapo ya aina bora na za zamani zaidi za udi,
+                            iliyopatikana kutoka kwa miti adimu zaidi ya udi katika milima ya Kalimantan. Inatolewa
+                            mahususi kwa wale wanaotafuta upekee na utofauti; urithi usio na kifani, uliorithiwa kutoka
+                            kwa mababu hadi kwa watoto.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Surrati Perfumes. Haki zote zimehifadhiwa.</p>
+            <ul class="footer-links">
+                <li><a href="#">Sera ya Faragha</a></li>
+                <li><a href="#">Masharti ya Huduma</a></li>
+                <li><a href="https://github.com/Fir3Boy">Wasiliana Nasi</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">Agiza Sasa</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

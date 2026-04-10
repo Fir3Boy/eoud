@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Easy Oud – Interaktiv namoyish</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-uz.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">Interaktiv namoyish</p>
+            <button id="reveal-btn" class="ignite-btn">Namoyishni boshlash</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">Ateşle</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>Saudiya Merosi</strong>
+                    <p>Gururla Suudi Arabistan'da üretilmiştir. Neredeyse bir asırlık bir mirastan gelen yüksek kaliteli öd ağacı.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Akıllı Kokteyl</strong>
+                    <p>Kolayca ateşlenebilir. Kömür veya geleneksel yakıt gereksinimleri yoktur.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Yanma Süresi</strong>
+                    <p>Bir çubuk yaklaşık bir saat yanar.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Yoğun Güç</strong>
+                    <p>1 çubuk, doğal agarodun 1 kg'ına eşdeğer koku gücü sunar.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Hava Temizleme</strong>
+                    <p>Gerçekten doğal yollarla hava temizler ve rahatsız edici kokuları ortadan kaldırır.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Sakinleştirici Etki</strong>
+                    <p> Sinirleri yatıştırır, stresi azaltır ve aromaterapi yoluyla ruh halini iyileştirir.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Uzun ömürlülük</strong>
+                    <p>Koku, geleneksel hava tazeyicilerinden çok daha uzun süre kalır.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Sanatçı Değeri</strong>
+                    <p>Tarihsel özenle yaratılmış benzersiz ve farklı bir koku.</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="agarwood kukuni"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="altın safran"></div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="Şam gülü"></div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="costus bitkisi"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="bergamot"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="deri"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="odun"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="pembe biber"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="kakule"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="sitrus"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="okyanus tuzu"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="ahşap ve yosunlu bitkiler"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="agar daraxti"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="okyanus rüzgarı"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="nilufar"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="amber"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="kiyik mushki"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="tonka"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="gül"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="taifi gülü"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="yasemin"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="ziravorlar"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="limon"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="lavanta"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="yasemin"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="gül"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="sadr daraxti"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="safron"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="kalimantan agar daraxti"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="maroki agar daraxti"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="cambodi agar daraxti"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="ziravorlar"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="gullar"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="sandal daraxti"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="pachuli"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="yasemin"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="sadr daraxti"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="kalimantan agar daraxti"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="cambodi agar daraxti"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="Tayoqlar to'plami">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Surrati’dan Oud Azraq hashamatli parfyum qutisi; oq rangdagi nafis logotip va yozuvlarga ega to‘q ko‘k rangli qadoq, oliy navli ud ifori mohiyatini aks ettiradi.">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="Leather Hail atir qutisi — nafis yashil va tilla rangli qadoq, issiq tuslar hamda o‘ziga xos brendingga ega bo‘lgan nafislik namunasi.">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="Ocean Breeze atir qutisi, dengiz mavisi va oq rangdagi nafis dizayn, dengiz tuzi va okyanus brizi iforining tetiklashtirici va tozalovchi xususiyatlarini aks ettiradi.">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="Royal Musk atir qutisi, oltin va qizil rangdagi hashamatli dizayn, musk va amber">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="Rose Taifi atir qutisi, nafis pushti va oq rangdagi dizayn, Taif guli va yasemin iforining romantik va nafis tabiatini aks ettiradi.">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="Lavender Garden atir qutisi, lavanta va oq rangdagi dizayn, issiq ziravorlar, limon va lavanta iforining tinchlantiruvchi va tetiklashtirici xususiyatlarini aks ettiradi.">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="Imperial Saffron atir qutisi, oltin va qora rangdagi dizayn, safron va kalim">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="Dehan Oud Maroki atir qutisi, to'q jigarrang va oltin rangdagi dizayn, maroki ud daraxti va o'rmon iforining chuqur va sirli tabiatini aks ettiradi.">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="Cuban Tobacco atir qutisi, issiq jigarrang va oltin rangdagi dizayn, kubalik tamaki va ziravorlar iforining issiq va o'ziga xos tabiatini aks ettiradi.">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="Oud Kalimantan atir qutisi, to'q yashil va oltin rangdagi dizayn, kalimantan ud">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>Moviy Ud</h2>
+                        <p>Eng sara va hashamatli Ud daraxti aralashmasi — oltin za'faron, Damashq atirguli va Kostus o'simligining nafis uyg'unligi mukammal hid taratadi.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>Charmli Kardamon</h2>
+                        <p>Yog'och, bergamot, qizil murch va kapulaga o'simligining o'ziga xos uyg'unligi bilan.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>Okean Yog'ochi</h2>
+                        <p>Toza havo kabi salqin — sitrus mevalari, dengiz tuzi, daraxt va yo‘sin iforlarining ochiq dengiz shabadasi bilan boyitilgan Ud daraxti bilan uyg‘unligi.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>Qirollik Mushki</h2>
+                        <p>Har qanday vaziyat uchun mos va yoz jaziramasida tetiklantiruvchi ifor. Musk va ambra notalari darhol tazelik baxsh etadi, liliya guli va kiyik mushkidan iborat yurak notalari esa tonka loviyasi va atirgul asosiga birlashib, chinakam go‘zal tajriba yaratadi.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>Taif Guli</h2>
+                        <p>Arab an'analaridan ilhomlangan ushbu nafis tutatqi, qo'lda terilgan sakkiz mingta Toif atirgullarining iforini o'zida mujassam etgan. Yasmin va eng sara gullar uyg'unligi barcha sezgilaringizni maftun etuvchi, hayratlanarli darajadagi yog'ochli-gulli muattar hidni yaratadi.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>Lavanda Bog'i</h2>
+                        <p>U issiq ziravorlar, bergamot, limon, lavanda, yasmin, atirgul va kedr daraxtining o'zaro uyg'unligini o'zida mujassam etgan.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>Imperator Za'faroni</h2>
+                        <p>Kalinmantan Ud daraxti bilan za'faron moyi ekstrakti.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>Marokash Ud Moyi</h2>
+                        <p>Kambodjaning tumanli tog'laridan olingan noyob, yo'qolib borayotgan Maroki navi. Ushbu hashamatli aralashma xom Ud daraxtining ehtirosini chuqur tutatqi (buxur) ifori bilan birlashtirib, to'g'ridan-to'g'ri qalbga yetib boruvchi hayajonli tarovat yaratadi.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>Kuba tamakisi</h2>
+                        <p>Kuba tamakisi (Cuban Tobacco) ziravorlar, yasmin gullari, nilam (patchouli) va sandal daraxtining o'ziga xos aralashmasidan iborat.
+                        </p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>Kalimantan Udi</h2>
+                        <p>Sakson yil davomida saqlangan ushbu Ud daraxti eng sara va qadimiy turlardan biri bo‘lib, Kalimantan tog‘laridagi eng noyob daraxtlardan olingan. U maxsus ravishda takrorlanmas meros, eksklyuzivlik va alohida e’tibor izlovchilar uchun taqdim etiladi — bu bobolardan farzandlarga o‘tib kelayotgan beqiyos ifordir.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Surrati atirlari. Barcha huquqlar himoyalangan.</p>
+            <ul class="footer-links">
+                <li><a href="#">Maxfiylik siyosati</a></li>
+                <li><a href="#">Xizmat ko'rsatish shartlari</a></li>
+                <li><a href="https://github.com/Fir3Boy">Biz bilan aloqada bo'ling</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">Hozir buyurtma bering</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

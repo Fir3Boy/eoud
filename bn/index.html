@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>সহজ উদ — ইন্টারেক্টিভ ডেমোনস্ট্রেশন</title>
+    <link rel="stylesheet" href="../assets/css/style-bn.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-bn.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <a href="../index.html">
+            <img class="logo-normal"
+                src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+                alt="Logo" />
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
+            <p class="subtitle">ইন্টারেক্টিভ ডেমোনস্ট্রেশন</p>
+            <button id="reveal-btn" class="ignite-btn">"প্রদর্শনী শুরু করুন</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">জ্বালান</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>সৌদি ঐতিহ্য</strong>
+                    <p>গর্বের সাথে সৌদি আরবে প্রস্তুত। প্রায় এক শতাব্দীর ঐতিহ্যবাহী উচ্চমানের আগরউডের এক অনন্য সংমিশ্রণ।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>স্মার্ট ইনসেন্স</strong>
+                    <p>সহজেই প্রজ্বলনযোগ্য। এতে কয়লা বা ঐতিহ্যবাহী ধুনুচির প্রয়োজন নেই।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>প্রজ্বলন সময়</strong>
+                    <p>প্রতিটি স্টিক প্রায় এক ঘণ্টা পর্যন্ত জ্বলে।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>উচ্চ ঘনত্বের শক্তি</strong>
+                    <p>মাত্র ১টি স্টিক ১ কেজি প্রাকৃতিক আগরউডের সমতুল্য সুগন্ধ প্রদান করে।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>বায়ু পরিশোধন</strong>
+                    <p>প্রাকৃতিকভাবে জীবাণু এবং দুর্গন্ধ দূর করে বাতাসকে বিশুদ্ধ করে।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>মানসিক প্রশান্তি</strong>
+                    <p>অ্যারোমাথেরাপির মাধ্যমে স্নায়ুকে শান্ত করে, মানসিক চাপ কমায় এবং মেজাজ ফুরফুরে রাখে।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>দীর্ঘস্থায়ী সুগন্ধ</strong>
+                    <p>এই সুগন্ধ গতানুগতিক এয়ার ফ্রেশনারের তুলনায় অনেক বেশি সময় ধরে টিকে থাকে।</p>
+                </div>
+                <div class="feature-item">
+                    <strong>শৈল্পিক মূল্য</strong>
+                    <p>ঐতিহাসিক নিপুণতায় তৈরি একটি অনন্য ও স্বতন্ত্র সুগন্ধ।</p>
+                </div>
+            </div>
+        </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="আগর কাঠ গুঁড়া"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="সোনালী জাফরান"></div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="দামেস্ক গোলাপ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="কস্টাস উদ্ভিদ"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="বার্গামট"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="চামড়া"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="কাঠ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="গোলাপী গোলমরিচ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="এলাচ"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="সাইট্রাস"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="সমুদ্রের লবণ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="কাঠের এবং শ্যাওলা গাছপালা"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="আগর কাঠ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="সমুদ্রের বাতাস"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="লিলি"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="অ্যাম্বার"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="ডিয়ার মাস্ক"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="টনকা"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="গোলাপ"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="তাইফি গোলাপ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="জাসমিন"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="স্পাইস"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="লেমন"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="লাভেন্ডার"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="জাসমিন"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="গোলাপ"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="সিদারউড"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="অ্যাম্বার"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="কালিমান্তান আগরউড"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="মারোকি আগরউড"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="কাম্বোডিয়ান আগরউড"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="স্পাইস"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="ফ্লোয়ার"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="স্যান্ডালউড"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="প্যাচৌলি"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="জাসমিন"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="সিদারউড"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="কালিমান্তান আগরউড"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="কাম্বোডিয়ান আগরউড"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="লাঠি সংগ্রহ">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="সুররাতির অউদ আজরাক বিলাসবহুল পারফিউম বক্স, আরবি এবং ইংরেজি টেক্সট সহ গভীর নীল প্যাকেজিং, মার্জিত সাদা লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম অউদ সুগন্ধি সারাংশ">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="লেদার হেল পারফিউম বক্স, উষ্ণ টোন এবং পরিমার্জিত ব্র্যান্ডিং সহ অত্যাধুনিক সবুজ এবং সোনালি সুগন্ধি প্যাকেজিং">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="ওশেন উড পারফিউম বক্স, সমুদ্রের নীল এবং সাদা রঙের প্যাকেজিং, সমুদ্রের তাজা বাতাস এবং উডি সুগন্ধি সারাংশের সাথে একটি মার্জিত লোগো সহ আধুনিক ডিজাইন">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="রয়েল মাস্ক পারফিউম বক্স, রাজকীয় গোলাপী এবং সোনালী রঙের প্যাকেজিং, রাজকীয় এবং বিলাসবহুল সুগন্ধি সারাংশের সাথে একটি মার্জিত লোগো সহ আধুনিক ডিজাইন">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="তাইফি রোজ পারফিউম বক্স, উষ্ণ গোলাপী এবং সাদা রঙের প্যাকেজিং, আরবি এবং ইংরেজি টেক্সট সহ মার্জিত লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম উডি-ফ্লোরাল সুগন্ধি সারাংশের সাথে আধুনিক ডিজাইন">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="ল্যাভেন্ডার গার্ডেন পারফিউম বক্স, শান্ত ল্যাভেন্ডার এবং সাদা রঙের প্যাকেজিং, আরবি এবং ইংরেজি টেক্সট সহ মার্জিত লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম স্পাইসি-ফ্লোরাল সুগন্ধি সারাংশের সাথে আধুনিক ডিজাইন">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="ইম্পেরিয়াল সাফ্রন পারফিউম বক্স, উষ্ণ সোনালী এবং কালো রঙের প্যাকেজিং, আরবি এবং ইংরেজি টেক্সট সহ মার্জিত লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম সাফ্রন-উড সুগন্ধি সারাংশের সাথে আধুনিক ডিজাইন">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="ডেহান অউদ মারোকি পারফিউম বক্স, কালো এবং সোনালী রঙের প্যাকেজিং, আরবি এবং ইংরেজি টেক্সট সহ মার্জিত লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম মারোকি-উড সুগন্ধি সারাংশের সাথে আধুনিক ডিজাইন">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="কিউবান টোবাকো পারফিউম বক্স, উষ্ণ বাদামী এবং সোনালী রঙের প্যাকেজিং, আরবি এবং ইংরেজি টেক্সট সহ মার্জিত লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম টোবাকো-উড সুগন্ধি সারাংশের সাথে আধুনিক ডিজাইন">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="কালিমান্তান ওউদ পারফিউম বক্স, কালো এবং সোনালী রঙের প্যাকেজিং, আরবি এবং ইংরেজি টেক্সট সহ মার্জিত লোগো এবং অক্ষর সমন্বিত, প্রিমিয়াম কালিমান্তান-উড সুগন্ধি সারাংশের সাথে আধুনিক ডিজাইন">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>ব্লু উদ (উদ আযরাক)</h2>
+                        <p>চমকপ্রদ সমৃদ্ধ এবং বিলাসবহুল উন্নত মানের আগরউডের এক রাজকীয় মিশ্রণ — যাতে রয়েছে সোনালী জাফরান, দামাস্ক রোজ এবং প্যাচৌলির ছোঁয়া, যা আপনাকে দেবে এক নিখুঁত এবং ভারসাম্যপূর্ণ সুগন্ধের অভিজ্ঞতা।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>লেদার কার্ডামম</h2>
+                        <p>কাঠ, বারগামট, গোলাপি গোলমরিচ এবং এলাচের এক অনন্য সংমিশ্রণ।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>ওশান উড</h2>
+                        <p>সতেজ বাতাসের মতো শীতল — লেবু (সাইট্রাস) ও সমুদ্রের লবণের হালকা নোটের সাথে কাঠ এবং শেওলার সুগন্ধের এক অনন্য মিশ্রণ। এর সাথে যুক্ত হয়েছে আগরউডের আভিজাত্য, যা আপনাকে সমুদ্রের স্নিগ্ধ হাওয়ার এক অপূর্ব অনুভূতি দেবে।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>রয়্যাল মাস্ক</h2>
+                        <p>এটি যেকোনো অনুষ্ঠানের জন্য উপযুক্ত এবং গ্রীষ্মের দাবদাহে অত্যন্ত সতেজ। মাস্ক এবং অ্যাম্বারের নোটগুলো আপনাকে তাৎক্ষণিক সতেজতা প্রদান করে, আর এর হৃদয়ে থাকা কস্তুরী ও উন্নত লিলি ফুলের সুগন্ধ ধীরে ধীরে টোঙ্কা এবং গোলাপের আবহে মিশে যায়—যা আপনাকে দেবে এক অপূর্ব ও মনোমুগ্ধকর অভিজ্ঞতা।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>রোজ তায়েফি</h2>
+                        <p>আরবীয় ঐতিহ্যে অনুপ্রাণিত এই মার্জিত সুগন্ধিটি তৈরি করা হয়েছে আট হাজার হাতে তোলা তায়েফ গোলাপের নির্যাস থেকে। জেসমিন এবং প্রথমবার ফোটা বাছাইকৃত ফুলের অনন্য মিশ্রণে তৈরি এই সুগন্ধিটি একটি অসাধারণ ‘উডি-ফ্লোরাল’ আবেশ সৃষ্টি করে, যা আপনার ইন্দ্রিয়কে এক অনন্য আভিজাত্যে ডুবিয়ে দেবে।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>ল্যাভেন্ডার গার্ডেন</h2>
+                        <p>এটি গরম মশলা, বার্গামট, লেবু, ল্যাভেন্ডার, জেসমিন, গোলাপ এবং সিডারউড বা দেবদারু কাঠের এক অনন্য মিশ্রণ।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>ইম্পেরিয়াল স্যাফরন</h2>
+                        <p>কালিমান্টান আগরউডের সাথে জাফরান তেলের নির্যাস।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>দেহান উদ মারোকি</h2>
+                        <p>কম্বোডিয়ার কুয়াশাচ্ছন্ন পাহাড় থেকে সংগৃহীত একটি বিরল এবং বিলুপ্তপ্রায় মারোকি জাতের উদ। এই বিলাসবহুল মিশ্রণে কাঁচা আগরউডের তীব্রতার সাথে ধূপের গভীর নোটের সমন্বয় ঘটানো হয়েছে, যা সরাসরি হৃদয়ে নাড়া দেয় এমন একটি আলোড়ন সৃষ্টিকারী সুগন্ধ তৈরি করে।</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>কিউবান টোব্যাকো</h2>
+                        <p>কিউবান টোব্যাকো হলো মশলাপাতি, জেসমিন ফুল, প্যাচৌলি এবং চন্দন কাঠের এক অনন্য মিশ্রণ।
+                        </p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>উদ কালিমান্তান</h2>
+                        <p>আশি বছরের পুরনো এই আগরউডটি কালিমান্তান পাহাড়ের বিরলতম আগর গাছ থেকে সংগৃহীত অন্যতম সেরা এবং প্রাচীনতম এক প্রকারের কাঠ। এটি বিশেষভাবে তাদের জন্য নিবেদন করা হয়েছে যারা একচেটিয়া এবং স্বতন্ত্র আভিজাত্যের সন্ধানে রয়েছেন; এটি এমন এক অতুলনীয় ঐতিহ্য যা দাদাদের হাত ধরে উত্তরসূরিদের মাঝে প্রবাহিত হয়ে এসেছে।</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 সুররাতি পারফিউম। সর্বস্বত্ব সংরক্ষিত</p>
+            <ul class="footer-links">
+                <li><a href="#">গোপনীয়তা নীতি</a></li>
+                <li><a href="#">পরিষেবার শর্তাবলী</a></li>
+                <li><a href="https://github.com/Fir3Boy">আমাদের সাথে যোগাযোগ করুন</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">এখনই অর্ডার করুন</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

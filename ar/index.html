@@ -1,0 +1,276 @@
+<!-- بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+ This project was made as a personal learning experience and as a final project for CS3305 Web Programming 2, to practice HTML, CSS, 
+ and JavaScript by building a simple splash page for the Easy Oud product. 
+ The goal was to create an elegant and user-friendly interface that allows 
+ visitors to select their preferred language before entering the main site.
+Ahmed Ahmed | 2026-04-10 
+-->
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ايزي عود - عرض تفاعلي</title>
+    <link rel="stylesheet" href="../assets/css/style-ar.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main-ar.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+    <a href="../index.html">
+        <img class="logo-normal"
+            src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
+            alt="الشعار" />
+    </a>
+</header>
+    <main>
+        <section class="hero">
+            <h1 id="product-name"> عود <span> &nbsp; زي </span> إي </h1>
+            <p class="subtitle">عرض تفاعلي</p>
+            <button id="reveal-btn" class="ignite-btn">ابدا العرض</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01"
+                                repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">اشعل</button>
+        </section>
+
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>إرث سعودي</strong>
+                    <p>مصنوع بفخر في السعودية، عود عالي الجودة من تراث يمتد لقرن تقريباً</p>
+                </div>
+                <div class="feature-item">
+                    <strong>بخور سهل</strong>
+                    <p>سهل الإشعال، لا يحتاج إلى فحم أو مبخرة كهربائية</p>
+                </div>
+                <div class="feature-item">
+                    <strong>وقت الاحتراق</strong>
+                    <p>يحترق العود الواحد لقرابة ساعة كاملة</p>
+                </div>
+                <div class="feature-item">
+                    <strong>قوة مركزة</strong>
+                    <p>رائحة العود واحد توازي واحد كيلوجرام من العود الطبيعي</p>
+                </div>
+                <div class="feature-item">
+                    <strong>تنقية الهواء</strong>
+                    <p>ينقي الهواء من البكتيريا والروائح الغير مرغوب بها</p>
+                </div>
+                <div class="feature-item">
+                    <strong>تأثير مهدئ</strong>
+                    <p>ينعش الأعصاب، ويقلل من التوتر، ويعزز المزاج من خلال العلاج بالبخور</p>
+                </div>
+                <div class="feature-item">
+                    <strong>طول الأمد</strong>
+                    <p>تستمر رائحة العود لفترة أطول من المزيلات التقليدية</p>
+                </div>
+                <div class="feature-item">
+                    <strong>قيمة فنية</strong>
+                    <p>رائحة فريدة ومميزة مصنوعة بعناية تاريخية</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"
+                                alt="agarwood powder"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="الزعفران الذهبي">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="ورد دمشقي">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="نبات القسط"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="برغموت"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="جلد"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="خشب"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt=" الفلفل الوردي">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="هيل"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="الحمضيات"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="ملح البحر"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="نباتات الخشب والطحالب">
+                        </div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="خشب العود"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="نسيم المحيط"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="زنبق"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="العنبر"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="مسك الغزال"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="تونكا"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="ورود"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="ورد الطايفي"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="جاسمين"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="توابل"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="ليمون"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="اللافندر"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="جاسمين"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="ورود"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="خشب السدر"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="الزعفران"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="عود كاليمنتن"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="عود ماروكى"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="عود كمبوديا"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="توابل"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="زهور"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="خشب الصندل"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="باتشولي"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="جاسمين"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="خشب السدر"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="عود كاليمنتن"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="عود كمبوديا"></div>
+                    </div>
+
+                    <div class="scent-showcase-box">
+                        <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="صندوق عرض عطور سرتي الفاخر، تصميم أنيق وجذاب يعكس جوهر العطور الراقية داخل الصندوق">
+                        <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                            alt="علبة عطر عود أزرق الفاخرة من سوراتي، عبوة زرقاء داكنة بنصوص عربية وإنجليزية، تتميز بشعار وكتابة بيضاء أنيقة، تعكس جوهر عطر العود الفاخر.">
+                        <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                            alt="علبة عطر جلدية أنيقة، عبوة عطر راقية بألوان دافئة وعلامة تجارية مميزة">
+                        <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                            alt="علبة عطر أوشن وود، تصميم عبوة عطر منعش وطبيعي">
+                        <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                            alt="علبة عطر ملكي، عبوة عطر ملكية وراقيّة بتصميم عطري عميق ومُستمر">
+                        <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                            alt="علبة عطر ورد طايفي، عبوة عطر شهيرة بتصميم أنيق">
+                        <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                            alt="علبة عطر لافندر جاردان، عبوة عطرية هادئة بلون زهري أرجواني وأبيض مستوحى من أجواء الحدائق المشمسة">
+                        <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                            alt="علبة عطر زعفران الإمبراطورية، عبوة عطر غنية وملكة بتصنيف زعفران ذهبي">
+                        <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                            alt="علبة عطر دهن عود ماروكي، عطر عود كمبودي أصيل بتغليف ذي نكهة عميقة ومعقدة.">
+                        <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                            alt="علبة عطر كوبي توباكو، عبوة عطر قوية وجريئة برائحة التبغ المدخن">
+                        <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                            alt="علبة عطر عود كاليمانتان، عبوة عطر فاخرة من خشب العود الإندونيسي">
+                    </div>
+
+                    <div class="scents-panels">
+                        <div class="scent-panel" id="panel-azraq">
+                            <h2>عود أزرق</h2>
+                            <p>خشب العود المخلوط الناعم، الغني والفاخر بطريقة مبهرة -
+                                لمسات من الزعفران الذهبي، الورد الدمشقي ونبات القسط لرائحة بخور متوازنة ومتكاملة</p>
+                        </div>
+                        <div class="scent-panel" id="panel-leather">
+                            <h2>جلد و هيل</h2>
+                            <p>بمزيج فريد من الخشب والخشب والبرغموت، والفلفل الوردي و الهيل</p>
+                        </div>
+                        <div class="scent-panel" id="panel-ocean">
+                            <h2>خشب المحيط </h2>
+                            <p>بارد كالهواء المنعش -
+                                مع رائحة خفيفة من الحمضيات، ملح البحر والنباتات الخشبية والطحلبية، خشب عود مخلوط و معطر
+                                برائحة نسيم المحيط</p>
+                        </div>
+                        <div class="scent-panel" id="panel-royal">
+                            <h2>مسك ملكي</h2>
+                            <p>يلائم جميع اللحظات و ينعش سخونة
+                                الصيف تتناثر فيه روائح المسك والعنبر لإحساس فوري بالنظافة والانتعاش وتفيض في قلبه رائحة
+                                مسك الغزال الممزوجة مع
+                                الزنبق الفاخر ويغزل المسك المثير سحره نحو قاعدة من التونكا والورود لتغمر من يشمها
+                                بجمالية الشعور</p>
+                        </div>
+                        <div class="scent-panel" id="panel-taifi">
+                            <h2>ورد طائفي</h2>
+                            <p>بخور مستوحى من أصالة التقاليد العربية، بتركيبته
+                                الوردية الخشبية الأنيقة التي تحتوي على الورد الطائفي تقدر بحوالي ثمانية الاف وردة، قطفت
+                                بحب وشغف، تبدأ
+                                نفحات زهرية خفيفة من الياسمين والورد الطائفي ذو القطفة الأولى، مزجت جميعها في بخور
+                                لتغمرك بأريجها الخلاب</p>
+                        </div>
+                        <div class="scent-panel" id="panel-lavender">
+                            <h2> حديقة الخزامى</h2>
+                            <p>تتميز بمزيج من التوابل الحارة والبرغموت واليمون والخزامى والياسمين والورد وخشب الأرز</p>
+                        </div>
+                        <div class="scent-panel" id="panel-saffron">
+                            <h2>زعفران امبراطوري</h2>
+                            <p>خلاصة زيت الزعفران مع خشب عود الكليمنتان</p>
+                        </div>
+                        <div class="scent-panel" id="panel-maroki">
+                            <h2>دهن عود مروكي</h2>
+                            <p>أصل فصيلته المروكي، ولكنه من النوع المنقرض، أتى من جبال الكمبوديا ويحمل إسمها،
+                                وهي جبال شاهقة خضراء، فيها أودية رائعة الجمال، وسحب متراكمة وضباب يملأ الأجواء،
+                                رفاهية ممزوجة بشغف رائحة خشب العود ونفحات البخور، مزيج مميز و مثير لتدخل رائحته القلب
+                            </p>
+                        </div>
+                        <div class="scent-panel" id="panel-cuban">
+                            <h2>تبغ كوبي</h2>
+                            <p>يتكون التبغ الكوبي من خليط من التوابل وزهور الياسمين والباتشولي وخشب الصندل</p>
+                        </div>
+                        <div class="scent-panel" id="panel-kalimantan">
+                            <h2>عود كليمنتان</h2>
+                            <p>عود معتق ثمانين عاما، من أرقى وأقدم أنواع خشب العود، من أندر أنواع أشجار العود العود في
+                                جبال كليمنتان،
+                                مقدم خصيصا للراغبين بالتفرد و التميز، إرث عطري لم يشهد مثيلا تناقله الأبناء من الأجداد
+                            </p>
+                        </div>
+                    </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>ء2026 السرتي للعطور، جميع الحقوق محفوظة</p>
+            <ul class="footer-links">
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">شروط الخدمة</a></li>
+                <li><a href="https://github.com/Fir3Boy">اتصل بنا</a></li>
+                <li><a href="https://uksurrati.com/collections/eoud-sticks">اطلب الآن</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

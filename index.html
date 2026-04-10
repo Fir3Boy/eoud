@@ -7,11 +7,12 @@ Ahmed Ahmed | 2026-04-10
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Easy Oud – Select Your Language</title>
-    
+
     <!-- Link to your existing global style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -19,7 +20,8 @@ Ahmed Ahmed | 2026-04-10
     <style>
         /* Reusing your hero class but adjusting height for the grid */
         .splash-hero {
-            min-height: calc(100vh - 100px); /* 100px for header */
+            min-height: calc(100vh - 100px);
+            /* 100px for header */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,7 +42,8 @@ Ahmed Ahmed | 2026-04-10
 
         /* Regional Category Label */
         .region-label {
-            grid-column: 1 / -1; /* Spans full width of grid */
+            grid-column: 1 / -1;
+            /* Spans full width of grid */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,7 +54,7 @@ Ahmed Ahmed | 2026-04-10
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 500;
-            
+
             /* Initial state for animation */
             opacity: 0;
             transform: translateY(10px);
@@ -63,7 +66,8 @@ Ahmed Ahmed | 2026-04-10
             transform: translateY(0);
         }
 
-        .region-label::before, .region-label::after {
+        .region-label::before,
+        .region-label::after {
             content: "";
             height: 1px;
             flex: 1;
@@ -81,7 +85,7 @@ Ahmed Ahmed | 2026-04-10
             justify-content: center;
             align-items: center;
             border-radius: 2px;
-            
+
             /* Initial state for your transition */
             opacity: 0;
             transform: translateY(20px);
@@ -124,12 +128,28 @@ Ahmed Ahmed | 2026-04-10
         }
 
         /* Essential Font Support for specific scripts to prevent breaking */
-        [lang="ar"] .lang-native, [lang="fa"] .lang-native, [lang="ur"] .lang-native { font-family: 'Segoe UI Arabic', sans-serif; }
-        [lang="hi"] .lang-native { font-family: 'Noto Sans Devanagari', 'Hind', sans-serif; line-height: 1.6; }
-        [lang="bn"] .lang-native { font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif; line-height: 1.6; }
-        [lang="zh"] .lang-native { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+        [lang="ar"] .lang-native,
+        [lang="fa"] .lang-native,
+        [lang="ur"] .lang-native {
+            font-family: 'Segoe UI Arabic', sans-serif;
+        }
+
+        [lang="hi"] .lang-native {
+            font-family: 'Noto Sans Devanagari', 'Hind', sans-serif;
+            line-height: 1.6;
+        }
+
+        [lang="bn"] .lang-native {
+            font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+            line-height: 1.6;
+        }
+
+        [lang="zh"] .lang-native {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- YOUR EXACT HEADER -->
@@ -149,12 +169,18 @@ Ahmed Ahmed | 2026-04-10
 
             <!-- THE LANGUAGE GRID -->
             <div class="lang-grid">
-                
+
                 <!-- Middle East -->
                 <div class="region-label">Middle East</div>
                 <a href="ar/index.html" class="lang-card" lang="ar">
                     <span class="lang-native" dir="rtl">العربية</span>
                     <span class="lang-english">Arabic</span>
+                </a>
+                <!-- Global / Western -->
+                <div class="region-label">Global / Western</div>
+                <a href="en/index.html" class="lang-card" lang="en">
+                    <span class="lang-native">English</span>
+                    <span class="lang-english">English</span>
                 </a>
                 <a href="fa/index.html" class="lang-card" lang="fa">
                     <span class="lang-native" dir="rtl">فارسی</span>
@@ -164,7 +190,6 @@ Ahmed Ahmed | 2026-04-10
                     <span class="lang-native">Türkçe</span>
                     <span class="lang-english">Turkish</span>
                 </a>
-
                 <!-- South Asia -->
                 <div class="region-label">South Asia</div>
                 <a href="ur/index.html" class="lang-card" lang="ur">
@@ -179,13 +204,6 @@ Ahmed Ahmed | 2026-04-10
                     <span class="lang-native">বাংলা</span>
                     <span class="lang-english">Bengali</span>
                 </a>
-
-                <!-- Global / Western -->
-                <div class="region-label">Global / Western</div>
-                <a href="en/index.html" class="lang-card" lang="en">
-                    <span class="lang-native">English</span>
-                    <span class="lang-english">English</span>
-                </a>
                 <a href="fr/index.html" class="lang-card" lang="fr">
                     <span class="lang-native">Français</span>
                     <span class="lang-english">French</span>
@@ -194,7 +212,6 @@ Ahmed Ahmed | 2026-04-10
                     <span class="lang-native">Русский</span>
                     <span class="lang-english">Russian</span>
                 </a>
-
                 <!-- Africa -->
                 <div class="region-label">Africa</div>
                 <a href="sw/index.html" class="lang-card" lang="sw">
@@ -205,7 +222,6 @@ Ahmed Ahmed | 2026-04-10
                     <span class="lang-native">Hausa</span>
                     <span class="lang-english">Hausa</span>
                 </a>
-
                 <!-- East / Central Asia -->
                 <div class="region-label">East / Central Asia</div>
                 <a href="zh/index.html" class="lang-card" lang="zh">
@@ -223,7 +239,6 @@ Ahmed Ahmed | 2026-04-10
             </div>
         </section>
     </main>
-
     <!-- YOUR EXACT FOOTER -->
     <footer>
         <div class="footer-content">
@@ -246,11 +261,11 @@ Ahmed Ahmed | 2026-04-10
                     // Staggered entry for a high-end feel
                     setTimeout(() => {
                         item.classList.add('is-visible');
-                    }, index * 50); 
+                    }, index * 50);
                 });
             }, 1500); // 2.5s matches your CSS shrinkName animation timing
         });
     </script>
-
 </body>
+
 </html>

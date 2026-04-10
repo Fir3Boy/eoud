@@ -1,229 +1,239 @@
-<!-- بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
- This project was made as a personal learning experience and as a final project for CS3305 Web Programming 2, to practice HTML, CSS, 
- and JavaScript by building a simple splash page for the Easy Oud product. 
- The goal was to create an elegant and user-friendly interface that allows 
- visitors to select their preferred language before entering the main site.
-Ahmed Ahmed | 2026-04-10 
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Easy Oud – Select Your Language</title>
-    
-    <!-- Link to your existing global style.css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Splash-Page Specific Styles -->
-    <style>
-        /* Reusing your hero class but adjusting height for the grid */
-        .splash-hero {
-            min-height: calc(100vh - 100px); /* 100px for header */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            box-sizing: border-box;
-        }
-
-        /* Language Grid Container */
-        .lang-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1000px;
-            margin-top: 20px;
-        }
-
-        /* Regional Category Label */
-        .region-label {
-            grid-column: 1 / -1; /* Spans full width of grid */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0 10px;
-            color: #aaa;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 500;
-            
-            /* Initial state for animation */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-out;
-        }
-
-        .region-label.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .region-label::before, .region-label::after {
-            content: "";
-            height: 1px;
-            flex: 1;
-            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
-        }
-
-        /* Language Card styled with your EXACT .feature-item transformations */
-        .lang-card {
-            border-left: 3px solid #d4af37;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 2px;
-            
-            /* Initial state for your transition */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-
-        /* Visible state triggered by JS */
-        .lang-card.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hover Effect from your code */
-        @media (hover: hover) {
-            .lang-card:hover {
-                background: rgba(212, 175, 55, 0.1);
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Active/Click state from your code */
-        .lang-card:active {
-            background: rgba(212, 175, 55, 0.2);
-            transform: scale(0.97);
-            transition: transform 0.1s;
-        }
-
-        .lang-native {
-            color: #d4af37;
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .lang-english {
-            color: #ccc;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Essential Font Support for specific scripts to prevent breaking */
-        [lang="ar"] .lang-native, [lang="fa"] .lang-native, [lang="ur"] .lang-native { font-family: 'Segoe UI Arabic', sans-serif; }
-        [lang="hi"] .lang-native { font-family: 'Noto Sans Devanagari', 'Hind', sans-serif; line-height: 1.6; }
-        [lang="bn"] .lang-native { font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif; line-height: 1.6; }
-        [lang="zh"] .lang-native { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
-    </style>
+    <title>Easy Oud – Interactive Demonstration</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-
-    <!-- YOUR EXACT HEADER -->
     <header class="main-header">
-        <a href="index.html">
+        <a href="../index.html">
             <img class="logo-normal"
                 src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=1600,height=1600,onerror=redirect,format=auto/pQxrOz/mrJXECTLzJM0aRbFOvbpFWbrluaBvxGL1EHSHtgG.png"
                 alt="Logo" />
         </a>
     </header>
-
     <main>
-        <section class="splash-hero">
-            <!-- YOUR EXACT ANIMATED TITLE -->
+        <section class="hero">
             <h1 id="product-name">e<span>asy&nbsp;</span>Oud</h1>
-            <p class="subtitle">Select your language</p>
-
-            <!-- THE LANGUAGE GRID -->
-            <div class="lang-grid">
-                
-                <!-- Middle East -->
-                <div class="region-label">Middle East</div>
-                <a href="ar/index.html" class="lang-card" lang="ar">
-                    <span class="lang-native" dir="rtl">العربية</span>
-                    <span class="lang-english">Arabic</span>
-                </a>
-                <a href="fa/index.html" class="lang-card" lang="fa">
-                    <span class="lang-native" dir="rtl">فارسی</span>
-                    <span class="lang-english">Farsi</span>
-                </a>
-                <a href="tr/index.html" class="lang-card" lang="tr">
-                    <span class="lang-native">Türkçe</span>
-                    <span class="lang-english">Turkish</span>
-                </a>
-
-                <!-- South Asia -->
-                <div class="region-label">South Asia</div>
-                <a href="ur/index.html" class="lang-card" lang="ur">
-                    <span class="lang-native" dir="rtl">اردو</span>
-                    <span class="lang-english">Urdu</span>
-                </a>
-                <a href="hi/index.html" class="lang-card" lang="hi">
-                    <span class="lang-native">हिन्दी</span>
-                    <span class="lang-english">Hindi</span>
-                </a>
-                <a href="bn/index.html" class="lang-card" lang="bn">
-                    <span class="lang-native">বাংলা</span>
-                    <span class="lang-english">Bengali</span>
-                </a>
-
-                <!-- Global / Western -->
-                <div class="region-label">Global / Western</div>
-                <a href="en/index.html" class="lang-card" lang="en">
-                    <span class="lang-native">English</span>
-                    <span class="lang-english">English</span>
-                </a>
-                <a href="fr/index.html" class="lang-card" lang="fr">
-                    <span class="lang-native">Français</span>
-                    <span class="lang-english">French</span>
-                </a>
-                <a href="ru/index.html" class="lang-card" lang="ru">
-                    <span class="lang-native">Русский</span>
-                    <span class="lang-english">Russian</span>
-                </a>
-
-                <!-- Africa -->
-                <div class="region-label">Africa</div>
-                <a href="sw/index.html" class="lang-card" lang="sw">
-                    <span class="lang-native">Kiswahili</span>
-                    <span class="lang-english">Swahili</span>
-                </a>
-                <a href="ha/index.html" class="lang-card" lang="ha">
-                    <span class="lang-native">Hausa</span>
-                    <span class="lang-english">Hausa</span>
-                </a>
-
-                <!-- East / Central Asia -->
-                <div class="region-label">East / Central Asia</div>
-                <a href="zh/index.html" class="lang-card" lang="zh">
-                    <span class="lang-native">中文</span>
-                    <span class="lang-english">Chinese</span>
-                </a>
-                <a href="id/index.html" class="lang-card" lang="id">
-                    <span class="lang-native">Bahasa Indonesia</span>
-                    <span class="lang-english">Indonesian</span>
-                </a>
-                <a href="uz/index.html" class="lang-card" lang="uz">
-                    <span class="lang-native">Oʻzbek</span>
-                    <span class="lang-english">Uzbek</span>
-                </a>
+            <p class="subtitle">Interactive Demonstration</p>
+            <button id="reveal-btn" class="ignite-btn">Start The Demonstration</button>
+            <div class="oud-container">
+                <div id="luxury-smoke">
+                    <div class="smoke-layer s-1"></div>
+                    <div class="smoke-layer s-2"></div>
+                </div>
+                <div class="smoke-wisp w-1"></div>
+                <div class="smoke-wisp w-2"></div>
+                <div class="smoke-wisp w-3"></div>
+                <div class="oud-stick">
+                    <div class="oud-tip">
+                        <div id="main-flame">
+                            <div class="flame-core"></div>
+                            <div class="flame-inner"></div>
+                            <div class="flame-outer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oud-base"></div>
+                <svg style="width:0; height:0; position:absolute;">
+                    <filter id="wavySmoke">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="1">
+                            <animate attributeName="baseFrequency" dur="10s" values="0.01;0.02;0.01" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" scale="25" />
+                    </filter>
+                </svg>
+            </div>
+            <button class="ignite-btn" id="start-btn" style="visibility:hidden">Ignite</button>
+        </section>
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <strong>Saudi Heritage</strong>
+                    <p>Proudly Saudi made. High-quality agarwood from a legacy spanning nearly a century.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Smart Incense</strong>
+                    <p>Easy to ignite. Requires no charcoal or traditional burners.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Burning Time</strong>
+                    <p>A single stick burns for around an hour.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Concentrated Power</strong>
+                    <p>1 stick offers the scent strength equivalent to 1 kg of natural agarwood.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Air Purification</strong>
+                    <p>Purifies the air from germs and unpleasant odors naturally.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Calming Effect</strong>
+                    <p>Soothes nerves, relieves stress, and improves mood through aromatherapy.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Longevity</strong>
+                    <p>The fragrance lingers much longer than traditional air fresheners.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Artistic Value</strong>
+                    <p>A unique, distinctive scent crafted with historical care.</p>
+                </div>
             </div>
         </section>
+        <!-- SCENTS SECTION -->
+        <div id="scents-pin-wrapper">
+            <section class="scents-pinned-stage">
+                <div class="ingredient-container">
+                    <div class="ingredient-group" id="ing-azraq">
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="agarwood powder"></div>
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="golden saffron"></div>
+                        <div class="ingredient-item"><img src="../assets/img/damascusrose1.webp" alt="damascus rose"></div>
+                        <div class="ingredient-item"><img src="../assets/img/costusplant1.png" alt="costus plant"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-leather">
+                        <div class="ingredient-item"><img src="../assets/img/bergamot2.png" alt="bergamot"></div>
+                        <div class="ingredient-item"><img src="../assets/img/leather2.png" alt="leather"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="wood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/pinkpeppercorn2.png" alt="pink peppercorn"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cardamom2.png" alt="cardamom"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-ocean">
+                        <div class="ingredient-item"><img src="../assets/img/citrus3.png" alt="citrus"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceansalt3.png" alt="ocean salt"></div>
+                        <div class="ingredient-item"><img src="../assets/img/mossy3.png" alt="wooden and mossy plants"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="agarwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/oceanbreeze3.png" alt="ocean breeze"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-royal">
+                        <div class="ingredient-item"><img src="../assets/img/lily4.png" alt="lily"></div>
+                        <div class="ingredient-item"><img src="../assets/img/amber4.png" alt="amber"></div>
+                        <div class="ingredient-item"><img src="../assets/img/deermusk4.png" alt="deer musk"></div>
+                        <div class="ingredient-item"><img src="../assets/img/tonka4.webp" alt="tonka"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="roses"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-taifi">
+                        <div class="ingredient-item"><img src="../assets/img/taifirose5.png" alt="taifi rose"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-lavender">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="spices"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lemon6.png" alt="lemon"></div>
+                        <div class="ingredient-item"><img src="../assets/img/lavender6.png" alt="lavender"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                        <div class="ingredient-item"><img src="../assets/img/roses4.png" alt="rose"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="cedarwood"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-saffron">
+                        <div class="ingredient-item"><img src="../assets/img/goldensaffron1.png" alt="saffron"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp" alt="kalimantan agarwood"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-maroki">
+                        <div class="ingredient-item"><img src="../assets/img/agarwood3.png" alt="maroki agarwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="cambodi agarwood"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-cuban">
+                        <div class="ingredient-item"><img src="../assets/img/spices6.webp" alt="spices"></div>
+                        <div class="ingredient-item"><img src="../assets/img/flower8.png" alt="flowers"></div>
+                        <div class="ingredient-item"><img src="../assets/img/sandalwood9.png" alt="sandalwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/patchouli8.png" alt="patchouli"></div>
+                        <div class="ingredient-item"><img src="../assets/img/jasmine5.webp" alt="jasmine"></div>
+                        <div class="ingredient-item"><img src="../assets/img/cedarwood6.webp" alt="cedarwood"></div>
+                    </div>
+                    <div class="ingredient-group" id="ing-kalimantan">
+                        <div class="ingredient-item"><img src="../assets/img/wood2.png" alt="kalimantan agarwood"></div>
+                        <div class="ingredient-item"><img src="../assets/img/agarwoodpowder1.webp"alt="cambodi agarwood"></div>
+                    </div>
+                </div>
+                <div class="scent-showcase-box">
+                    <img src="../assets/img/showbox.webp" id="box-cover" class="box-img" alt="Collection of sticks">
+                    <img src="../assets/img/azraqbox.webp" class="box-img" id="box-azraq"
+                        alt="Oud Azraq luxury perfume box by Surrati, deep blue packaging with Arabic and English text, featuring elegant white logo and lettering, conveying premium oud fragrance essence">
+                    <img src="../assets/img/leatherbox.webp" class="box-img" id="box-leather"
+                        alt="Leather Hail perfume box, sophisticated green and golden fragrance packaging with warm tones and refined branding">
+                    <img src="../assets/img/oceanbox.webp" class="box-img" id="box-ocean"
+                        alt="Ocean Wood perfume box, fresh and natural blue and white sea waves fragrance packaging design">
+                    <img src="../assets/img/royalbox.webp" class="box-img" id="box-royal"
+                        alt="Royal Scent perfume box, majestic and regal white and golden strips fragrance packaging with deep, enduring musk essence">
+                    <img src="../assets/img/taifibox.webp" class="box-img" id="box-taifi"
+                        alt="Ward Taifi perfume box, legendary Taif rose pink fragrance packaging featuring elegant design">
+                    <img src="../assets/img/lavenderbox.webp" class="box-img" id="box-lavender"
+                        alt="Lavender Jardin perfume box, calming floral purple and gardeny whitefragrance packaging evoking sun-drenched garden atmosphere">
+                    <img src="../assets/img/saffronbox.webp" class="box-img" id="box-saffron"
+                        alt="Imperial Saffron perfume box, rich and regal golden and red saffrony saffron fragrance packaging">
+                    <img src="../assets/img/marokibox.webp" class="box-img" id="box-maroki"
+                        alt="Dehan Oud Maroki perfume box, authentic Combodi oud fragrance with deep, complex red tone packaging">
+                    <img src="../assets/img/cubanbox.webp" class="box-img" id="box-cuban"
+                        alt="Cuban Tobacco perfume box, robust and smoky bold with brown cigar finish fragrance packaging">
+                    <img src="../assets/img/kalimantanbox.webp" class="box-img" id="box-kalimantan"
+                        alt="Oud Kalimantan black perfume box, premium Indonesian agarwood fragrance packaging">
+                </div>
+                <div class="scents-panels">
+                    <div class="scent-panel" id="panel-azraq">
+                        <h2>Blue Oud</h2>
+                        <p>Fine blended Oud wood, impressively rich and luxurious
+                            — touches of golden saffron, Damask rose, and Costus for a balanced and complete incense
+                            fragrance.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-leather">
+                        <h2>Leather Cardamom</h2>
+                        <p>With a unique blend of wood, bergamot, pink pepper, and cardamom.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-ocean">
+                        <h2>Ocean Wood</h2>
+                        <p>Cool as fresh air — with light notes of citrus, sea salt,
+                            woody and mossy plants, and a blended Oud wood scented with the fragrance of an ocean
+                            breeze.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-royal">
+                        <h2>Royal Musk</h2>
+                        <p>Perfect for all occasions and refreshing in the summer heat.
+                            Notes of musk and amber offer instant freshness,
+                            while a heart of deer musk and luxury lily unfolds into a base of
+                            tonka and rose for a truly beautiful experience.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-taifi">
+                        <h2>Rose Taifi</h2>
+                        <p>Inspired by Arabian tradition, this elegant incense features the essence of eight
+                            thousand hand-picked Taif Roses. Blending jasmine with first-pick blooms,
+                            it creates a breathtaking woody-floral aroma that completely immerses the senses.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-lavender">
+                        <h2>Lavender Garden</h2>
+                        <p>It features a blend of hot spices, bergamot, lemon, lavender, jasmine, rose, and
+                            cedarwood.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-saffron">
+                        <h2>Imperial Saffron</h2>
+                        <p>Saffron oil essence with Kalimantan Oud wood.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-maroki">
+                        <h2>Dehan Oud Maroki</h2>
+                        <p>A rare, extinct Maroke variety from the mist-covered Cambodian mountains.
+                            This luxurious blend combines the passion of raw Oud wood with deep
+                            incense notes, creating a stirring fragrance that reaches straight to the heart.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-cuban">
+                        <h2>Cuban Tobacco</h2>
+                        <p>Cuban Tobacco consists of a blend of spices, jasmine flowers, patchouli, and sandalwood.</p>
+                    </div>
+                    <div class="scent-panel" id="panel-kalimantan">
+                        <h2>Oud Kalimantan</h2>
+                        <p>Aged for eighty years, this is one of the finest and oldest types of Oud wood,
+                            sourced from the rarest Oud trees in the Kalimantan mountains.
+                            It is offered specifically for those who seek exclusivity and
+                            distinction, heritage without parallel, passed down from grandfathers to sons.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
-    <!-- YOUR EXACT FOOTER -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Surrati Perfumes. All rights reserved.</p>
@@ -235,31 +245,9 @@ Ahmed Ahmed | 2026-04-10
             </ul>
         </div>
     </footer>
-    <script>
-        // Scroll Trigger Logic (Intersection Observer)
-        document.addEventListener('DOMContentLoaded', () => {
-            const elementsToAnimate = document.querySelectorAll('.lang-card, .region-label');
-            // Observer configuration
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -50px 0px', // Triggers slightly before the item hits the bottom of the viewport
-                threshold: 0.1 // Triggers when 10% of the item is visible
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Adds the visible class when scrolled into view
-                        entry.target.classList.add('is-visible');
-                        
-                        // Stops observing once animated so it doesn't repeat every time you scroll up/down
-                        observer.unobserve(entry.target); 
-                    }
-                });
-            }, observerOptions);
 
-            // Apply observer to all cards and labels
-            elementsToAnimate.forEach(el => observer.observe(el));
-        });
-    </script>
+
+
 </body>
+
 </html>
